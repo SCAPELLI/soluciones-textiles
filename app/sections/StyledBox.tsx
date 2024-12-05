@@ -3,7 +3,7 @@
 
 import { Box, styled } from "@mui/material";
 
-const StyledBox = styled(Box)(({ theme }) => ({
+const StyledBox = styled(Box)(() => ({
     minHeight: '100vh',
     display: 'flex',
     alignItems: 'center',
