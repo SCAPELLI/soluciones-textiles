@@ -1,0 +1,10 @@
+import { Box, Typography } from "@mui/material";
+import StyledBox from "./StyledBox";
+
+export function AboutMe() {
+  return (
+    <StyledBox>
+      <Typography variant="h1">Acerca de mi</Typography>
+    </StyledBox>
+  );
+}
