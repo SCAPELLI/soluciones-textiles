@@ -1,4 +1,4 @@
-import Box from '@mui/material/Box';
+import Box from "@mui/material/Box";
 import { Typography } from "@mui/material";
 import { Services } from "./sections/Services";
 import { AboutMe } from "./sections/AboutMe";
@@ -6,14 +6,14 @@ import { Hero } from "./sections/Hero";
 
 export default function Home() {
   return (
-    <Box 
+    <Box
       sx={{
-        position: 'relative',
-        backgroundImage: 'url(/ai_side_image_seamless.jpg)',
-        backgroundRepeat: 'repeat-y',
-        backgroundPosition: 'right',
-        backgroundSize: '20% auto',
-        backgroundColor: '#010206'
+        position: "relative",
+        backgroundImage: "url(/ai_side_image_seamless.jpg)",
+        backgroundRepeat: "repeat-y",
+        backgroundPosition: "right",
+        backgroundSize: "20% auto",
+        backgroundColor: "#010206",
       }}
     >
       <Hero />
