@@ -17,8 +17,8 @@ export default function Home() {
       }}
     >
       <Hero />
-      <AboutMe />
       <Services />
+      <AboutMe />
 
       <Typography variant="h2">Ubicacion</Typography>
 
