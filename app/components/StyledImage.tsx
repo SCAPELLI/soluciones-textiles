@@ -6,9 +6,11 @@ import { useState } from "react";
 
 interface StyledImageProps {
   src: string;
+  title: string;
+  body: string;
 }
 
-const StyledImage: React.FC<StyledImageProps> = ({ src }) => {
+const StyledImage: React.FC<StyledImageProps> = ({ src, title, body }) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   return (
     <Box
@@ -19,11 +21,26 @@ const StyledImage: React.FC<StyledImageProps> = ({ src }) => {
         justifyContent: "center",
       }}
     >
-      <Typography variant="h4">Sastreria</Typography>
+      <Box
+        sx={{
+          height: "80px",
+          display: "flex",
+          alignItems: "end",
+          justifyContent: "center",
+          marginBottom: "10px",
+        }}
+      >
+        <Typography variant="h5">{title}</Typography>
+      </Box>
       <Box
         sx={{
           position: "relative", // Contenedor relativo para posicionar elementos hijos
           display: "inline-block", // Para que se ajuste al tamaño de la imagen
+          transition: "transform 0.3s ease", // Agrega una transición suave para el cambio de tamaño
+          "&:hover": {
+            transform: "scale(1.05)", // Escala un 5% al hacer hover
+            cursor: "pointer",
+          },
         }}
         onMouseEnter={() => setIsCollapsed(true)} // Llama a setIsCollapsed cuando el mouse entra
         onMouseLeave={() => setIsCollapsed(false)} // Restaura el estado cuando el mouse sale
@@ -34,7 +51,7 @@ const StyledImage: React.FC<StyledImageProps> = ({ src }) => {
           style={{
             width: "100%",
             height: "auto",
-            borderRadius: "10px 10px 0 0",
+            borderRadius: "10px",
             border: "2px solid #fae25c",
           }}
         />
@@ -66,16 +83,17 @@ const StyledImage: React.FC<StyledImageProps> = ({ src }) => {
         sx={{
           borderRadius: "0 0 10px 10px",
           backgroundColor: "rgba(235, 52, 204, 0.5)",
-          border: "2px solid #fae25c",
+          border: isCollapsed ? "2px solid #fae25c" : 0,
           height: isCollapsed ? "200px" : 0,
           overflow: "hidden",
           transition: "max-height 0.5s ease-in-out, height 0.3s ease",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
         }}
       >
         <Typography variant="h5" sx={{ color: "white" }}>
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut "
+          {body}
         </Typography>
       </Box>
     </Box>

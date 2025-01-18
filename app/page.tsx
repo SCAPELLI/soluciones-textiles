@@ -9,14 +9,17 @@ export default function Home() {
     <Box
       sx={{
         position: "relative",
-        backgroundImage: "url(/ai_side_image_seamless.jpg)",
-        backgroundRepeat: "repeat-y",
-        backgroundPosition: "right",
-        backgroundSize: "20% auto",
+        backgroundImage:
+          "url(/ai_side_image_seamless_right.jpg), url(/ai_side_image_seamless_left.jpg)",
+        backgroundRepeat: "repeat-y, repeat-y",
+        backgroundPosition: "right, left",
+        backgroundSize: "20% auto, 20% auto",
         backgroundColor: "#010206",
       }}
     >
       <Hero />
+      <Services />
+      <Services />
       <Services />
       <AboutMe />
 

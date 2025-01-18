@@ -15,17 +15,34 @@ export function Services() {
     >
       <Typography variant="h3">Servicios</Typography>
 
-      <Grid container spacing={3} sx={{ marginTop: "20px", width: "80%" }}>
+      <Typography variant="body1" marginTop={2}>
+        En La Modista, ofrecemos una amplia variedad de servicios que reflejan
+        nuestro compromiso con la calidad y el cumplimiento
+      </Typography>
+
+      <Grid container spacing={3} sx={{ width: "80%" }}>
         <Grid size={{ xs: 12, md: 4 }}>
-          <StyledImage src="/merceria.jpg" />
+          <StyledImage
+            src="/merceria.jpg"
+            title="Mercería"
+            body="Disponemos de insumos y materiales de alta calidad para satisfacer todas tus necesidades textiles."
+          />
         </Grid>
 
         <Grid size={{ xs: 12, md: 4 }}>
-          <StyledImage src="/sastreria.jpeg" />
+          <StyledImage
+            src="/sastreria.jpeg"
+            title="Sastrería y Reparaciones"
+            body="Ofrecemos servicios de sastrería, reparaciones y entallados a medida, asegurando que tus prendas se ajusten perfectamente a tu estilo."
+          />
         </Grid>
 
         <Grid size={{ xs: 12, md: 4 }}>
-          <StyledImage src="/sastreria.jpeg" />
+          <StyledImage
+            src="/sastreria.jpeg"
+            title="Confecciones y Disfraces"
+            body="Confeccionamos ropa y disfraces a medida, siempre adaptados a las solicitudes particulares de nuestros clientes, con atención a cada detalle."
+          />
         </Grid>
       </Grid>
     </StyledBox>
