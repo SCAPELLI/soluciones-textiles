@@ -4,7 +4,7 @@
 import { Box, styled } from "@mui/material";
 
 const StyledBox = styled(Box)(() => ({
-    minHeight: '100vh',
+    minHeight: '60vh',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
