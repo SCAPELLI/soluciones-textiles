@@ -19,8 +19,6 @@ export default function Home() {
     >
       <Hero />
       <Services />
-      <Services />
-      <Services />
       <AboutMe />
 
       <Typography variant="h2">Ubicacion</Typography>

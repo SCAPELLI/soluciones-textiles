@@ -23,15 +23,7 @@ export function Services() {
       <Grid container spacing={3} sx={{ width: "80%" }}>
         <Grid size={{ xs: 12, md: 4 }}>
           <StyledImage
-            src="/merceria.jpg"
-            title="Mercería"
-            body="Disponemos de insumos y materiales de alta calidad para satisfacer todas tus necesidades textiles."
-          />
-        </Grid>
-
-        <Grid size={{ xs: 12, md: 4 }}>
-          <StyledImage
-            src="/sastreria.jpeg"
+            src="/sastreria_formatted.jpeg"
             title="Sastrería y Reparaciones"
             body="Ofrecemos servicios de sastrería, reparaciones y entallados a medida, asegurando que tus prendas se ajusten perfectamente a tu estilo."
           />
@@ -39,7 +31,15 @@ export function Services() {
 
         <Grid size={{ xs: 12, md: 4 }}>
           <StyledImage
-            src="/sastreria.jpeg"
+            src="/merceria_formatted.jpg"
+            title="Mercería"
+            body="Disponemos de insumos y materiales de alta calidad para satisfacer todas tus necesidades textiles."
+          />
+        </Grid>
+
+        <Grid size={{ xs: 12, md: 4 }}>
+          <StyledImage
+            src="/confecciones_formatted.jpg"
             title="Confecciones y Disfraces"
             body="Confeccionamos ropa y disfraces a medida, siempre adaptados a las solicitudes particulares de nuestros clientes, con atención a cada detalle."
           />

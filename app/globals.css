@@ -25,3 +25,10 @@ body {
     text-wrap: balance;
   }
 }
+
+@font-face {
+  font-family: "GeorgiaPro-Regular";
+  src: url("/fonts/georgia/GeorgiaPro-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
