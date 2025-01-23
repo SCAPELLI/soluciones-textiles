@@ -1,6 +1,5 @@
 "use client";
 import Box from "@mui/material/Box";
-import { Typography } from "@mui/material";
 import { Services } from "./sections/Services";
 import { AboutMe } from "./sections/AboutMe";
 import { Hero } from "./sections/Hero";
