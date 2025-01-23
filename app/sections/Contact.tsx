@@ -1,6 +1,7 @@
 import { Typography } from "@mui/material";
 import StyledBox from "./StyledBox";
 import { Map } from "@vis.gl/react-google-maps";
+import Grid from "@mui/material/Grid2";
 
 export function Contact() {
   return (
@@ -12,7 +13,55 @@ export function Contact() {
         textAlign: "center",
       }}
     >
-      <Typography variant="h3">SECCION CONTACTO</Typography>
+      <Grid container spacing={3} sx={{ marginTop: "20px", width: "60%" }}>
+        <Grid size={{ xs: 12, md: 3 }}>
+          <Typography
+            variant="h5"
+            sx={{ color: "#cc55cc", fontWeight: "bold" }}
+          >
+            Dirección
+          </Typography>
+          <Typography variant="body1">
+            Membrillar 51, Local 41 <br /> Flores <br /> CABA, Argentina
+          </Typography>
+        </Grid>
+        <Grid size={{ xs: 12, md: 3 }}>
+          <Typography
+            variant="h5"
+            sx={{ color: "#cc55cc", fontWeight: "bold" }}
+          >
+            Contacto
+          </Typography>
+          <Typography variant="body1">
+            <br />
+            011 2251-5703
+          </Typography>
+        </Grid>
+        <Grid size={{ xs: 12, md: 3 }}>
+          <Typography
+            variant="h5"
+            sx={{ color: "#cc55cc", fontWeight: "bold" }}
+          >
+            Horario de atención
+          </Typography>
+          <Typography variant="body1">
+            Lunes a Viernes <br /> 10 a 13 hs - 14 a 19 hs <br /> Sábados 10 a
+            13 hs
+          </Typography>
+        </Grid>
+        <Grid size={{ xs: 12, md: 3 }}>
+          <Typography
+            variant="h5"
+            sx={{ color: "#cc55cc", fontWeight: "bold" }}
+          >
+            Formas de pago
+          </Typography>
+          <Typography variant="body1">
+            Efectivo - Tarjetas <br /> Mercado Pago <br /> Transferencia
+          </Typography>
+        </Grid>
+      </Grid>
+
       <Map
         style={{ width: "80vw", height: "400px" }}
         defaultCenter={{ lat: -34.62897840637906, lng: -58.46100151324344 }}
@@ -20,25 +69,6 @@ export function Contact() {
         gestureHandling={"greedy"}
         disableDefaultUI={true}
       />
-
-      {/* <Grid container spacing={3} sx={{ marginTop: "20px", width: "50%" }}>
-        <Grid size={{ xs: 12, md: 6 }}>
-          <Typography variant="body1" sx={{}}>
-            En <span style={{ fontWeight: "bold" }}>Soluciones Textiles</span>{" "}
-            <span style={{ color: "#cc55cc", fontWeight: "bold" }}>
-              La Modista
-            </span>{" "}
-            , nos respaldan más de 40 años de experiencia en el rubro textil
-          </Typography>
-        </Grid>
-        <Grid size={{ xs: 12, md: 6 }}>
-          <Typography variant="body1" sx={{}}>
-            {" "}
-            Respetamos los tiempos de entrega acordados, entregando resultados
-            que superan las expectativas
-          </Typography>
-        </Grid>
-      </Grid> */}
     </StyledBox>
   );
 }
