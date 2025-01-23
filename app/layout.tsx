@@ -4,7 +4,6 @@ import "./globals.css";
 import { Navbar } from "./components/Navbar";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider } from "@mui/material";
-
 import theme from "./theme";
 
 const geistSans = localFont({
