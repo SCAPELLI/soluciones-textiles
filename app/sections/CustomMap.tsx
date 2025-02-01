@@ -28,7 +28,7 @@ export function CustomMap() {
       zoom={isMobile ? null : zoom}
       disableDefaultUI={true}
       mapId="c7070a22837149e4"
-      gestureHandling={isMobile ? "auto" : "cooperative"}
+      gestureHandling={"cooperative"}
       scrollwheel={isMobile ? true : false}
     >
       <AdvancedMarker
