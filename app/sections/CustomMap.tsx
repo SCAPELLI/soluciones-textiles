@@ -25,10 +25,11 @@ export function CustomMap() {
       style={styles.map}
       defaultCenter={{ lat: -34.62897840637906, lng: -58.46100151324344 }}
       defaultZoom={15}
-      zoom={zoom}
+      zoom={isMobile ? null : zoom}
       disableDefaultUI={true}
       mapId="c7070a22837149e4"
-      gestureHandling={isMobile ? "auto" : "none"}
+      gestureHandling={isMobile ? "auto" : "cooperative"}
+      scrollwheel={isMobile ? true : false}
     >
       <AdvancedMarker
         ref={markerRef}
