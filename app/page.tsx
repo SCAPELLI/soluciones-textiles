@@ -30,7 +30,7 @@ export default function Home() {
             setHeroIsVisible(false);
           }
         },
-        { threshold: 0.4 } // Detecta cuando el Hero está menos del 10% visible
+        { threshold: 0.7 } // Detecta cuando el Hero está menos del 10% visible
       );
 
       observer.observe(heroRef.current);
