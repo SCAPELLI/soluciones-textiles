@@ -1,4 +1,4 @@
-import { Typography } from "@mui/material";
+import { Typography, useMediaQuery, useTheme } from "@mui/material";
 import {
   AdvancedMarker,
   ControlPosition,
@@ -17,16 +17,18 @@ export function CustomMap() {
 
   const [zoom, setZoom] = useState(15);
 
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
     <Map
       style={styles.map}
       defaultCenter={{ lat: -34.62897840637906, lng: -58.46100151324344 }}
       defaultZoom={15}
       zoom={zoom}
-      gestureHandling={"greedy"}
       disableDefaultUI={true}
       mapId="c7070a22837149e4"
-      scrollwheel={false}
+      gestureHandling={isMobile ? "auto" : "none"}
     >
       <AdvancedMarker
         ref={markerRef}
@@ -73,29 +75,33 @@ export function CustomMap() {
         </div>
       )}
 
-      <MapControl position={ControlPosition.RIGHT_BOTTOM}>
-        <div
-          style={{
-            backgroundColor: "white",
-            padding: "10px",
-            borderRadius: "5px",
-            boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.2)",
-          }}
-        >
-          <button
-            style={styles.buttonStyle}
-            onClick={() => setZoom((prevZoom) => Math.min(prevZoom + 1, 21))}
+      {!isMobile && (
+        <MapControl position={ControlPosition.RIGHT_BOTTOM}>
+          <div
+            style={{
+              backgroundColor: "white",
+              padding: "10px",
+              borderRadius: "5px",
+              boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.2)",
+              display: "flex",
+              flexDirection: "column",
+            }}
           >
-            +
-          </button>
-          <button
-            style={styles.buttonStyle}
-            onClick={() => setZoom((prevZoom) => Math.max(prevZoom - 1, 0))}
-          >
-            -
-          </button>
-        </div>
-      </MapControl>
+            <button
+              style={styles.buttonStyle}
+              onClick={() => setZoom((prevZoom) => Math.min(prevZoom + 1, 21))}
+            >
+              +
+            </button>
+            <button
+              style={styles.buttonStyle}
+              onClick={() => setZoom((prevZoom) => Math.max(prevZoom - 1, 0))}
+            >
+              -
+            </button>
+          </div>
+        </MapControl>
+      )}
     </Map>
   );
 }
@@ -111,8 +117,8 @@ const styles = {
   buttonStyle: {
     backgroundColor: "#fae25c",
     border: "1px solid #fae25c",
-    padding: "5px 10px",
-    margin: "5px 0",
+    padding: "3px 8px",
+    margin: "2px 0",
     fontSize: "18px",
     cursor: "pointer",
     borderRadius: "3px",
