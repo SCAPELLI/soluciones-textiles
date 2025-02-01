@@ -13,7 +13,7 @@ import { useState } from "react";
 export function CustomMap() {
   const [markerRef, marker] = useAdvancedMarkerRef();
   const [infowindowOpen, setInfowindowOpen] = useState(true);
-  const [mark, _] = useState(Date.now());
+  const mark = Date.now();
 
   const [zoom, setZoom] = useState(15);
 
