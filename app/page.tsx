@@ -6,14 +6,38 @@ import { Hero } from "./sections/Hero";
 
 import { APIProvider } from "@vis.gl/react-google-maps";
 import { Contact } from "./sections/Contact";
+import { useEffect, useRef } from "react";
+import { useStore } from "./store/store";
 
 export default function Home() {
   const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "";
+  const heroRef = useRef<HTMLDivElement>(null);
+  const setHeroIsVisible = useStore((state) => state.setHeroIsVisible);
+
   if (!apiKey) {
     throw new Error(
       "Missing API key: Please define NEXT_PUBLIC_GOOGLE_MAPS_API_KEY in your .env file."
     );
   } else {
+    useEffect(() => {
+      if (!heroRef.current) return;
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setHeroIsVisible(true);
+          } else {
+            setHeroIsVisible(false);
+          }
+        },
+        { threshold: 0.1 } // Detecta cuando el Hero está menos del 10% visible
+      );
+
+      observer.observe(heroRef.current);
+
+      return () => observer.disconnect();
+    }, []);
+
     return (
       <APIProvider apiKey={apiKey}>
         <Box
@@ -27,7 +51,9 @@ export default function Home() {
             backgroundColor: "#010206",
           }}
         >
-          <Hero />
+          <div ref={heroRef}>
+            <Hero />
+          </div>
           <Services />
           <AboutMe />
 

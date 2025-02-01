@@ -1,21 +1,39 @@
 "use client";
 
-import { AppBar, Toolbar, Typography, Box, Link, CssBaseline, Drawer, IconButton, List, ListItem, ListItemButton, ListItemText, Divider } from '@mui/material';
-import { useState } from 'react';
-import MenuIcon from '@mui/icons-material/Menu';
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Box,
+  Link,
+  CssBaseline,
+  Drawer,
+  IconButton,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+  Divider,
+} from "@mui/material";
+import { useState } from "react";
+import MenuIcon from "@mui/icons-material/Menu";
+import { useStore } from "../store/store";
+import { stat } from "fs";
 
-const navItems = ['Home', 'About', 'Services', 'Contact'];
+const navItems = ["Home", "About", "Services", "Contact"];
 const drawerWidth = 240;
 
 export const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {
-    setMobileOpen(prevState => !prevState);
+    setMobileOpen((prevState) => !prevState);
   };
 
+  const heroIsVisible = useStore((state) => state.heroIsVisible);
+
   const drawer = (
-    <Box sx={{ textAlign: 'center' }} onClick={handleDrawerToggle}>
+    <Box sx={{ textAlign: "center" }} onClick={handleDrawerToggle}>
       <Typography variant="h6" sx={{ my: 2 }}>
         Logo
       </Typography>
@@ -23,7 +41,7 @@ export const Navbar = () => {
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
+            <ListItemButton sx={{ textAlign: "center" }}>
               <ListItemText primary={item} />
             </ListItemButton>
           </ListItem>
@@ -35,7 +53,7 @@ export const Navbar = () => {
   return (
     <>
       <CssBaseline />
-      <AppBar position="fixed" sx={{ zIndex: 1201, backgroundColor: '#333' }}>
+      <AppBar position="fixed" sx={{ zIndex: 1201, backgroundColor: "#333" }}>
         <Toolbar>
           {/* Icono de menú en pantallas pequeñas */}
           <IconButton
@@ -43,7 +61,7 @@ export const Navbar = () => {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
+            sx={{ mr: 2, display: { sm: "none" } }}
           >
             <MenuIcon />
           </IconButton>
@@ -52,11 +70,21 @@ export const Navbar = () => {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Logo
           </Typography>
-
+          {heroIsVisible && (
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+              Logo
+            </Typography>
+          )}
           {/* Links en pantallas grandes */}
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+          <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
-              <Link key={item} href="#" color="inherit" underline="none" sx={{ marginLeft: '1rem' }}>
+              <Link
+                key={item}
+                href="#"
+                color="inherit"
+                underline="none"
+                sx={{ marginLeft: "1rem" }}
+              >
                 {item}
               </Link>
             ))}
@@ -73,8 +101,8 @@ export const Navbar = () => {
           keepMounted: true, // Mejora el rendimiento en móviles
         }}
         sx={{
-          display: { xs: 'block', sm: 'none' },
-          '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+          display: { xs: "block", sm: "none" },
+          "& .MuiDrawer-paper": { boxSizing: "border-box", width: drawerWidth },
         }}
       >
         {drawer}
