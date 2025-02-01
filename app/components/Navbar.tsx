@@ -65,15 +65,6 @@ export const Navbar = () => {
             <MenuIcon />
           </IconButton>
 
-          {/* Título */}
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Logo
-          </Typography>
-          {heroIsVisible && (
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              Logo
-            </Typography>
-          )}
           {/* Links en pantallas grandes */}
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
@@ -87,6 +78,40 @@ export const Navbar = () => {
                 {item}
               </Link>
             ))}
+          </Box>
+
+          <Box
+            sx={{
+              display: "flex",
+              flexGrow: 1,
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <img
+              src="/logo_sin_datos_sin_lado.png"
+              alt="Soluciones Textiles La Modista"
+              style={{
+                width: "auto",
+                height: "40px",
+                transition:
+                  "opacity 0.2s ease-in-out, transform 0.1s ease-in-out",
+                opacity: heroIsVisible ? 0 : 1,
+                transform: heroIsVisible ? "translateY(14px)" : "translateY(0)",
+              }}
+            />
+          </Box>
+
+          <Box sx={{ marginLeft: "auto" }}>
+            <Link
+              key={"wpp"}
+              href="#"
+              color="inherit"
+              underline="none"
+              sx={{ marginLeft: "1rem" }}
+            >
+              {"Whatsapp"}
+            </Link>
           </Box>
         </Toolbar>
       </AppBar>
