@@ -3,8 +3,9 @@ import Box from "@mui/material/Box";
 import { Services } from "./sections/Services";
 import { AboutMe } from "./sections/AboutMe";
 import { Hero } from "./sections/Hero";
-import { Contact } from "./sections/Contact";
+
 import { APIProvider } from "@vis.gl/react-google-maps";
+import { Contact } from "./sections/Contact";
 
 export default function Home() {
   const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "";

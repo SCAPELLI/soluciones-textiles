@@ -1,9 +1,27 @@
+"use client";
 import { Typography } from "@mui/material";
 import StyledBox from "./StyledBox";
-import { Map } from "@vis.gl/react-google-maps";
+import {
+  AdvancedMarker,
+  ControlPosition,
+  InfoWindow,
+  Map,
+  MapControl,
+  Pin,
+  useAdvancedMarkerRef,
+} from "@vis.gl/react-google-maps";
 import Grid from "@mui/material/Grid2";
+import { useState } from "react";
+import { CustomMap } from "./CustomMap";
 
 export function Contact() {
+  const [markerRef, marker] = useAdvancedMarkerRef();
+  const [infowindowOpen, setInfowindowOpen] = useState(true);
+  const [mark, setMark] = useState(Date.now());
+
+  const [zoom, setZoom] = useState(15);
+  const [controlPosition, setControlControlPosition] =
+    useState<ControlPosition>(ControlPosition.LEFT_BOTTOM);
   return (
     <StyledBox
       sx={{
@@ -62,13 +80,17 @@ export function Contact() {
         </Grid>
       </Grid>
 
-      <Map
-        style={{ width: "80vw", height: "400px" }}
-        defaultCenter={{ lat: -34.62897840637906, lng: -58.46100151324344 }}
-        defaultZoom={14}
-        gestureHandling={"greedy"}
-        disableDefaultUI={true}
-      />
+      <CustomMap />
     </StyledBox>
   );
 }
+
+const styles = {
+  map: {
+    height: "400px",
+    width: "60vw",
+    borderRadius: "10px",
+    border: "3px solid #fae25c",
+    overflow: "hidden",
+  },
+};
