@@ -56,13 +56,15 @@ export function CustomMap() {
       {infowindowOpen && (
         <div key={marker && infowindowOpen ? marker.id : mark}>
           <InfoWindow
-            anchor={marker}
             maxWidth={200}
+            anchor={marker}
             onCloseClick={() => {
               setInfowindowOpen(false);
-              console.log("InfoWindow closed");
             }}
             shouldFocus={false}
+            style={{
+              marginRight: "6px",
+            }}
           >
             <img
               src="/logo_sin_datos2.png"

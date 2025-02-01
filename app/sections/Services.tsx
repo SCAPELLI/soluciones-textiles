@@ -20,7 +20,7 @@ export function Services() {
         nuestro compromiso con la calidad y el cumplimiento
       </Typography>
 
-      <Grid container spacing={3} sx={{ width: "80%" }}>
+      <Grid container spacing={3} sx={{ width: "60%" }}>
         <Grid size={{ xs: 12, md: 4 }}>
           <StyledImage
             src="/sastreria_formatted.jpeg"

@@ -20,6 +20,8 @@ const StyledImage: React.FC<StyledImageProps> = ({ src, title, body }) => {
         alignItems: "center",
         justifyContent: "center",
       }}
+      onMouseEnter={() => setIsCollapsed(true)} // Llama a setIsCollapsed cuando el mouse entra
+      onMouseLeave={() => setIsCollapsed(false)} // Restaura el estado cuando el mouse sale
     >
       <Box
         sx={{
@@ -42,8 +44,6 @@ const StyledImage: React.FC<StyledImageProps> = ({ src, title, body }) => {
             cursor: "pointer",
           },
         }}
-        onMouseEnter={() => setIsCollapsed(true)} // Llama a setIsCollapsed cuando el mouse entra
-        onMouseLeave={() => setIsCollapsed(false)} // Restaura el estado cuando el mouse sale
       >
         <img
           src={src}
@@ -92,7 +92,7 @@ const StyledImage: React.FC<StyledImageProps> = ({ src, title, body }) => {
           justifyContent: "center",
         }}
       >
-        <Typography variant="h5" sx={{ color: "white" }}>
+        <Typography variant="body1" sx={{ color: "white" }}>
           {body}
         </Typography>
       </Box>
