@@ -18,6 +18,7 @@ import { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useStore } from "../store/store";
 import { Sections } from "../Constants/Sections";
+import { Content } from "../Constants/Content";
 
 const navItems = [
   Sections.HOME,
@@ -72,8 +73,8 @@ export const Navbar = () => {
         alt="Soluciones Textiles La Modista"
         style={{
           position: "absolute",
-          bottom: 4,
-          right: 4,
+          bottom: 8,
+          right: 6,
           width: "180px",
           height: "auto",
         }}
@@ -169,21 +170,53 @@ export const Navbar = () => {
           >
             <Link
               key={"wpp"}
-              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              href={`https://wa.me/+5491122515703/?text=${Content.Whatsapp.MESSAGE}`}
               color="inherit"
               underline="none"
-              sx={{ marginLeft: "1rem" }}
+              sx={{
+                marginLeft: "1rem",
+                transition: "transform 0.1s ease-in-out",
+                "&:hover": {
+                  transform: "scale(1.2)",
+                  cursor: "pointer",
+                },
+              }}
             >
-              {"What"}
+              <img
+                src="icons/whatsapp.png"
+                alt="WhatsApp"
+                style={{
+                  width: "24px",
+                  height: "24px",
+                }}
+              />
             </Link>
             <Link
-              key={"wpp"}
-              href="#"
+              key={"facebook"}
+              href="https://www.facebook.com/stlamodista"
               color="inherit"
               underline="none"
-              sx={{ marginLeft: "1rem" }}
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{
+                marginLeft: "1rem",
+                transition: "transform 0.1s ease-in-out",
+                "&:hover": {
+                  transform: "scale(1.2)",
+                  cursor: "pointer",
+                },
+              }}
             >
-              {"What"}
+              <img
+                src="icons/facebook.png"
+                alt="Facebook"
+                style={{
+                  width: "24px",
+                  height: "24px",
+                }}
+              />
             </Link>
           </Box>
         </Toolbar>
