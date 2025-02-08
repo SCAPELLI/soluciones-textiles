@@ -53,9 +53,7 @@ export const Navbar = () => {
 
   const drawer = (
     <Box sx={{ textAlign: "center" }} onClick={handleDrawerToggle}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        Logo
-      </Typography>
+      <div style={{ height: 60 }} />
       <Divider />
       <List>
         {navItems.map((item) => (
@@ -69,6 +67,18 @@ export const Navbar = () => {
           </ListItem>
         ))}
       </List>
+      <Divider />
+      <img
+        src="/logo_sin_datos_sin_lado_letra_negra.png"
+        alt="Soluciones Textiles La Modista"
+        style={{
+          position: "absolute",
+          bottom: 4,
+          right: 4,
+          width: "180px",
+          height: "auto",
+        }}
+      />
     </Box>
   );
 
