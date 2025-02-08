@@ -8,6 +8,7 @@ import { APIProvider } from "@vis.gl/react-google-maps";
 import { Contact } from "./sections/Contact";
 import { useEffect, useRef } from "react";
 import { useStore } from "./store/store";
+import { FloatingIcon } from "./components/FloatingIcon";
 
 export default function Home() {
   const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "";
@@ -58,6 +59,7 @@ export default function Home() {
           <AboutMe />
 
           <Contact />
+          <FloatingIcon />
         </Box>
       </APIProvider>
     );
