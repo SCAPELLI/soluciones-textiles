@@ -40,7 +40,7 @@ export const Navbar = () => {
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
+            <ListItemButton sx={{ textAlign: "left" }}>
               <ListItemText primary={item} />
             </ListItemButton>
           </ListItem>
@@ -55,25 +55,43 @@ export const Navbar = () => {
       <AppBar position="fixed" sx={{ zIndex: 1201, backgroundColor: "#333" }}>
         <Toolbar>
           {/* Icono de menú en pantallas pequeñas */}
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
+          <Box
+            sx={{
+              display: { sm: "none" },
+              mr: 2,
+              width: "36%",
+              alignItems: "left",
+            }}
           >
-            <MenuIcon />
-          </IconButton>
-
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              edge="start"
+              onClick={handleDrawerToggle}
+            >
+              <MenuIcon />
+            </IconButton>
+          </Box>
           {/* Links en pantallas grandes */}
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+          <Box
+            sx={{
+              display: {
+                xs: "none",
+                sm: "flex",
+                width: "40%",
+                justifyContent: "flex-start",
+                flexDirection: "row",
+              },
+            }}
+          >
             {navItems.map((item) => (
               <Link
                 key={item}
                 href="#"
                 color="inherit"
                 underline="none"
-                sx={{ marginLeft: "1rem" }}
+                marginLeft={1}
+                sx={{ fontSize: "13px" }}
               >
                 {item}
               </Link>
@@ -83,7 +101,7 @@ export const Navbar = () => {
           <Box
             sx={{
               display: "flex",
-              flexGrow: 1,
+              width: "20%",
               alignItems: "center",
               justifyContent: "center",
             }}
@@ -93,16 +111,25 @@ export const Navbar = () => {
               alt="Soluciones Textiles La Modista"
               style={{
                 width: "auto",
-                height: "40px",
+                maxHeight: "40px",
+                minWidth: "150px",
                 transition:
-                  "opacity 0.2s ease-in-out, transform 0.1s ease-in-out",
+                  "opacity 0.1s ease-in-out, transform 0.1s ease-in-out",
                 opacity: heroIsVisible ? 0 : 1,
                 transform: heroIsVisible ? "translateY(14px)" : "translateY(0)",
               }}
             />
           </Box>
 
-          <Box sx={{ marginLeft: "auto" }}>
+          <Box
+            sx={{
+              marginLeft: "auto",
+              width: "40%",
+              justifyContent: "flex-end",
+              flexDirection: "row",
+              display: "flex",
+            }}
+          >
             <Link
               key={"wpp"}
               href="#"
@@ -110,7 +137,16 @@ export const Navbar = () => {
               underline="none"
               sx={{ marginLeft: "1rem" }}
             >
-              {"Whatsapp"}
+              {"What"}
+            </Link>
+            <Link
+              key={"wpp"}
+              href="#"
+              color="inherit"
+              underline="none"
+              sx={{ marginLeft: "1rem" }}
+            >
+              {"What"}
             </Link>
           </Box>
         </Toolbar>
