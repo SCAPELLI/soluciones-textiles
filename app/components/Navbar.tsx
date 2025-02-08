@@ -18,8 +18,14 @@ import {
 import { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useStore } from "../store/store";
+import { Sections } from "../Constants/Sections";
 
-const navItems = ["Home", "About", "Services", "Contact"];
+const navItems = [
+  Sections.HOME,
+  Sections.SERVICES,
+  Sections.ABOUT_ME,
+  Sections.CONTACT,
+];
 const drawerWidth = 240;
 
 export const Navbar = () => {
@@ -31,6 +37,20 @@ export const Navbar = () => {
 
   const heroIsVisible = useStore((state) => state.heroIsVisible);
 
+  const handleNavClick = (
+    id: string,
+    event?: React.MouseEvent<HTMLAnchorElement>
+  ) => {
+    event?.preventDefault(); // Evita el comportamiento predeterminado de `<Link>`
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({
+        block: "start",
+      });
+      window.scrollBy(0, -60);
+    }
+  };
+
   const drawer = (
     <Box sx={{ textAlign: "center" }} onClick={handleDrawerToggle}>
       <Typography variant="h6" sx={{ my: 2 }}>
@@ -40,7 +60,10 @@ export const Navbar = () => {
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "left" }}>
+            <ListItemButton
+              sx={{ textAlign: "left" }}
+              onClick={() => handleNavClick(item)}
+            >
               <ListItemText primary={item} />
             </ListItemButton>
           </ListItem>
@@ -81,17 +104,22 @@ export const Navbar = () => {
                 width: "40%",
                 justifyContent: "flex-start",
                 flexDirection: "row",
+                cursor: "pointer",
               },
             }}
           >
             {navItems.map((item) => (
               <Link
                 key={item}
-                href="#"
+                onClick={(e) => handleNavClick(item, e)}
                 color="inherit"
                 underline="none"
                 marginLeft={1}
-                sx={{ fontSize: "13px" }}
+                sx={{
+                  fontSize: "13px",
+                  cursor: "pointer",
+                  "&:hover": { opacity: 0.7 },
+                }}
               >
                 {item}
               </Link>

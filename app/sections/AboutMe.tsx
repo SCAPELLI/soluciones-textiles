@@ -1,6 +1,7 @@
 import { Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import StyledBox from "./StyledBox";
+import { Sections } from "../Constants/Sections";
 
 export function AboutMe() {
   return (
@@ -11,6 +12,7 @@ export function AboutMe() {
         padding: "20px",
         textAlign: "center",
       }}
+      id={Sections.ABOUT_ME}
     >
       <Typography variant="h3">Quiénes Somos</Typography>
 

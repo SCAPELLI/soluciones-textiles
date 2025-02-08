@@ -3,6 +3,7 @@ import { Typography } from "@mui/material";
 import StyledBox from "./StyledBox";
 import Grid from "@mui/material/Grid2";
 import { CustomMap } from "./CustomMap";
+import { Sections } from "../Constants/Sections";
 
 export function Contact() {
   return (
@@ -13,6 +14,7 @@ export function Contact() {
         padding: "20px",
         textAlign: "center",
       }}
+      id={Sections.CONTACT}
     >
       <Grid container spacing={3} sx={{ marginTop: "20px", width: "60%" }}>
         <Grid size={{ xs: 12, md: 3 }}>

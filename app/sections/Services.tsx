@@ -2,6 +2,7 @@ import { Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import StyledBox from "./StyledBox";
 import StyledImage from "../components/StyledImage";
+import { Sections } from "../Constants/Sections";
 
 export function Services() {
   return (
@@ -12,6 +13,7 @@ export function Services() {
         padding: "20px",
         textAlign: "center",
       }}
+      id={Sections.SERVICES}
     >
       <Typography variant="h3">Servicios</Typography>
 

@@ -7,10 +7,11 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
+import { Sections } from "../Constants/Sections";
 
 export function Hero() {
   return (
-    <StyledBox>
+    <StyledBox id={Sections.HOME}>
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         navigation
