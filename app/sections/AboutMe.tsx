@@ -2,6 +2,7 @@ import { Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import StyledBox from "./StyledBox";
 import { Sections } from "../Constants/Sections";
+import { Content } from "../Constants/Content";
 
 export function AboutMe() {
   return (
@@ -14,23 +15,22 @@ export function AboutMe() {
       }}
       id={Sections.ABOUT_ME}
     >
-      <Typography variant="h3">Quiénes Somos</Typography>
+      <Typography variant="h3">{Content.aboutMe.title}</Typography>
 
       <Grid container spacing={3} sx={{ marginTop: "20px", width: "80%" }}>
         <Grid size={{ xs: 12, md: 6 }}>
           <Typography variant="body1" sx={{}}>
-            En <span style={{ fontWeight: "bold" }}>Soluciones Textiles</span>{" "}
+            <span style={{ fontWeight: "bold" }}>Soluciones Textiles</span>{" "}
             <span style={{ color: "#cc55cc", fontWeight: "bold" }}>
               La Modista
             </span>{" "}
-            , nos respaldan más de 40 años de experiencia en el rubro textil
+            {Content.aboutMe.message1}
           </Typography>
         </Grid>
         <Grid size={{ xs: 12, md: 6 }}>
           <Typography variant="body1" sx={{}}>
             {" "}
-            Respetamos los tiempos de entrega acordados, entregando resultados
-            que superan las expectativas
+            {Content.aboutMe.message2}
           </Typography>
         </Grid>
       </Grid>

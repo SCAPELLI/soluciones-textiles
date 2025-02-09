@@ -1,5 +1,3 @@
-import { title } from "process";
-
 export const Content = {
   whatsapp: {
     message:
@@ -36,5 +34,10 @@ export const Content = {
       title: "Confecciones y Disfraces",
       message: `¡Diseña tu disfraz con nosotros! Confeccionamos prendas a medida, creadas según tus preferencias.`,
     },
+  },
+  aboutMe: {
+    title: "Quiénes Somos",
+    message1: `es una empresa con más de 40 años de experiencia en el rubro textil, especializada en la confección de ropa a medida, arreglos y entallados. Nuestro compromiso es ofrecer calidad y precisión en cada prenda.`,
+    message2: `Garantizamos tiempos de entrega promedio de 48 horas, cumpliendo con cada compromiso y superando las expectativas de nuestros clientes con resultados impecables.`,
   },
 };

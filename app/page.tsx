@@ -55,8 +55,8 @@ export default function Home() {
           <div ref={heroRef}>
             <Hero />
           </div>
-          <Services />
           <AboutMe />
+          <Services />
 
           <Contact />
           <FloatingIcon />
