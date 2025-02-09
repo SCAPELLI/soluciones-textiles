@@ -7,13 +7,15 @@ export function Footer() {
     <StyledBox
       sx={{
         color: "white",
-        padding: "20px",
+        padding: "1px",
+        paddingRight: "120px",
         alignItems: "center",
         justifyContent: "flex-start",
         backgroundColor: "#333",
         width: "100%",
         display: "flex",
         flexDirection: "row",
+        height: "100px",
       }}
       id={Sections.CONTACT}
     >
@@ -43,7 +45,12 @@ export function Footer() {
         <img
           src="/avatar.png"
           alt="Sebastián Capelli"
-          style={{ width: "40px", marginLeft: "10px", marginRight: "80px" }}
+          style={{
+            marginLeft: "10px",
+            height: "70px",
+            minWidth: "50px",
+            objectFit: "contain",
+          }}
         />
       </Link>
     </StyledBox>
