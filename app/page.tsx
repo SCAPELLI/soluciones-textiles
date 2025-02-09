@@ -55,10 +55,10 @@ export default function Home() {
           <div ref={heroRef}>
             <Hero />
           </div>
+          <Contact />
           <AboutMe />
           <Services />
 
-          <Contact />
           <FloatingIcon />
         </Box>
       </APIProvider>

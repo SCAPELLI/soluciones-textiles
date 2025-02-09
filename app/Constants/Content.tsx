@@ -37,7 +37,7 @@ export const Content = {
   },
   aboutMe: {
     title: "Quiénes Somos",
-    message1: `es una empresa con más de 40 años de experiencia en el rubro textil, especializada en la confección de ropa a medida, arreglos y entallados. Nuestro compromiso es ofrecer calidad y precisión en cada prenda.`,
-    message2: `Garantizamos tiempos de entrega promedio de 48 horas, cumpliendo con cada compromiso y superando las expectativas de nuestros clientes con resultados impecables.`,
+    message1: `es una empresa con más de 40 años de experiencia en el rubro textil, especializada en la confección de ropa a medida, arreglos y entallados.`,
+    message2: `Respetamos los tiempos de entrega, cumpliendo cada compromiso y superando las expectativas de nuestros clientes con resultados impecables`,
   },
 };
