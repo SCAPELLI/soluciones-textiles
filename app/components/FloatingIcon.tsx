@@ -10,8 +10,8 @@ export const FloatingIcon = () => {
       sx={{
         transition: "transform 0.1s ease-in-out",
         position: "fixed",
-        bottom: "2rem",
-        right: "2rem",
+        bottom: "1rem",
+        right: "1rem",
 
         "&:hover": {
           transform: "scale(1.1)",
