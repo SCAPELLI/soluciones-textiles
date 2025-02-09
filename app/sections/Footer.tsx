@@ -31,7 +31,7 @@ export function Footer() {
       <Typography variant="caption" sx={{ color: "white" }}>
         Copyright © 2025 | Todos los Derechos Reservados.
       </Typography>
-      <div style={{ display: "flex", flexGrow: 1 }} />
+      <div style={{ display: "flex", flexGrow: 1, minWidth: "10px" }} />
 
       <Typography variant="caption" sx={{ color: "white" }}>
         Sitio web creado por{" "}

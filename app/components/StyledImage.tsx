@@ -3,14 +3,21 @@
 import { Box, Typography } from "@mui/material";
 import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
 import { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/autoplay";
 
 interface StyledImageProps {
-  src: string;
+  sources: string[];
   title: string;
   body: string;
 }
 
-const StyledImage: React.FC<StyledImageProps> = ({ src, title, body }) => {
+const StyledImage: React.FC<StyledImageProps> = ({ sources, title, body }) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   return (
     <Box
@@ -43,18 +50,32 @@ const StyledImage: React.FC<StyledImageProps> = ({ src, title, body }) => {
             transform: "scale(1.05)", // Escala un 5% al hacer hover
             cursor: "pointer",
           },
+          width: "100%",
         }}
       >
-        <img
-          src={src}
-          alt={src}
-          style={{
-            width: "100%",
-            height: "auto",
-            borderRadius: "10px",
-            border: "2px solid #fae25c",
-          }}
-        />
+        <Swiper
+          modules={[Pagination, Navigation]}
+          pagination
+          loop
+          navigation
+          slidesPerView={1}
+          style={{ width: "100%" }}
+        >
+          {sources.map((src, index) => (
+            <SwiperSlide key={index}>
+              <img
+                src={src}
+                alt={src}
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  borderRadius: "10px",
+                  border: "2px solid #fae25c",
+                }}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
         <Box
           sx={{
             display: "flex",
@@ -74,6 +95,7 @@ const StyledImage: React.FC<StyledImageProps> = ({ src, title, body }) => {
             bottom: 0, // centrar verticalmente
             left: "50%", // centrar horizontalmente
             transform: "translateX(-50%) translateY(50%)",
+            zIndex: 1, // Asegura que el círculo esté sobre la imagen
           }}
         >
           <KeyboardDoubleArrowDownIcon />

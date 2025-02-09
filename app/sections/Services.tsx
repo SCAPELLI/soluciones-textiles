@@ -80,7 +80,7 @@ export function Services() {
       <Grid container spacing={3} sx={{ width: "100%" }}>
         <Grid size={{ xs: 12, md: 4 }}>
           <StyledImage
-            src="/sastreria_formatted.jpeg"
+            sources={["/photos/tailor1.png", "/photos/tailor2.png"]}
             title={Content.services.tailor.title}
             body={Content.services.tailor.message}
           />
@@ -88,7 +88,12 @@ export function Services() {
 
         <Grid size={{ xs: 12, md: 4 }}>
           <StyledImage
-            src="/merceria_formatted.jpg"
+            sources={[
+              "/merceria_formatted.jpg",
+              "/photos/merceria1.png",
+              "/photos/merceria2.png",
+              "/photos/merceria3.png",
+            ]}
             title={Content.services.supplies.title}
             body={Content.services.supplies.message}
           />
@@ -96,7 +101,10 @@ export function Services() {
 
         <Grid size={{ xs: 12, md: 4 }}>
           <StyledImage
-            src="/confecciones_formatted.jpg"
+            sources={[
+              "/photos/confecciones1.png",
+              "/confecciones_formatted.jpg",
+            ]}
             title={Content.services.costumes.title}
             body={Content.services.costumes.message}
           />

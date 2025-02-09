@@ -13,12 +13,11 @@ export function Hero() {
   return (
     <StyledBox id={Sections.HOME}>
       <Swiper
-        modules={[Navigation, Pagination, Autoplay]}
-        navigation
+        modules={[Pagination, Autoplay]}
         pagination
         loop
         autoplay={{
-          delay: 2000,
+          delay: 5000,
           disableOnInteraction: false,
         }}
         spaceBetween={50}
@@ -31,15 +30,29 @@ export function Hero() {
         <SwiperSlide>
           <img
             src="/logo_con_datos_sin_lado.png"
-            alt="slide 1"
-            style={{ width: "100%", height: "auto", backgroundColor: "blue" }}
+            alt="Soluciones Textiles La Modista"
+            style={{ width: "100%", height: "auto" }}
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
-            src="/logo_con_datos_sin_lado.png"
-            alt="slide 1"
-            style={{ width: "100%", height: "auto", backgroundColor: "blue" }}
+            src="/photos/hero1_formatted.png"
+            alt="Soluciones Textiles La Modista"
+            style={{ width: "100%", height: "auto" }}
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            src="/photos/hero2_formatted.png"
+            alt="Soluciones Textiles La Modista"
+            style={{ width: "100%", height: "auto" }}
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            src="/photos/hero3_formatted.png"
+            alt="Soluciones Textiles La Modista"
+            style={{ width: "100%", height: "auto" }}
           />
         </SwiperSlide>
       </Swiper>
