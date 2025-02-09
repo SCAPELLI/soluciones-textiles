@@ -41,7 +41,7 @@ export const Navbar = () => {
     id: string,
     event?: React.MouseEvent<HTMLAnchorElement>
   ) => {
-    event?.preventDefault(); // Evita el comportamiento predeterminado de `<Link>`
+    event?.preventDefault();
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({

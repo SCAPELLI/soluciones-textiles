@@ -26,7 +26,7 @@ export function Services() {
         textAlign: "center",
         alignItems: "center",
         justifyContent: "center",
-        paddingBottom: "160px",
+        paddingBottom: "100px",
         alignSelf: "center",
         justifySelf: "center",
       }}

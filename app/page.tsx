@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import { Services } from "./sections/Services";
 import { AboutMe } from "./sections/AboutMe";
 import { Hero } from "./sections/Hero";
+import { Footer } from "./sections/Footer";
 
 import { APIProvider } from "@vis.gl/react-google-maps";
 import { Contact } from "./sections/Contact";
@@ -58,7 +59,7 @@ export default function Home() {
           <Contact />
           <AboutMe />
           <Services />
-
+          <Footer />
           <FloatingIcon />
         </Box>
       </APIProvider>
