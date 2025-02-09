@@ -16,7 +16,7 @@ export function AboutMe() {
     >
       <Typography variant="h3">Quiénes Somos</Typography>
 
-      <Grid container spacing={3} sx={{ marginTop: "20px", width: "50%" }}>
+      <Grid container spacing={3} sx={{ marginTop: "20px", width: "80%" }}>
         <Grid size={{ xs: 12, md: 6 }}>
           <Typography variant="body1" sx={{}}>
             En <span style={{ fontWeight: "bold" }}>Soluciones Textiles</span>{" "}

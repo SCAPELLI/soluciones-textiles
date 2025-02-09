@@ -6,7 +6,7 @@ export const FloatingIcon = () => {
     <Link
       target="_blank"
       rel="noopener noreferrer"
-      href={`https://wa.me/+5491122515703/?text=${Content.Whatsapp.MESSAGE}`}
+      href={`https://wa.me/+5491122515703/?text=${Content.whatsapp.message}`}
       sx={{
         transition: "transform 0.1s ease-in-out",
         position: "fixed",

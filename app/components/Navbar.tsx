@@ -172,7 +172,7 @@ export const Navbar = () => {
               key={"wpp"}
               target="_blank"
               rel="noopener noreferrer"
-              href={`https://wa.me/+5491122515703/?text=${Content.Whatsapp.MESSAGE}`}
+              href={`https://wa.me/+5491122515703/?text=${Content.whatsapp.message}`}
               color="inherit"
               underline="none"
               sx={{

@@ -24,7 +24,7 @@ export function Hero() {
         spaceBetween={50}
         slidesPerView={1}
         style={{
-          width: "60%",
+          width: "100%",
           overflow: "hidden",
         }}
       >

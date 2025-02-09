@@ -48,7 +48,7 @@ export default function Home() {
               "url(/ai_side_image_seamless_right.jpg), url(/ai_side_image_seamless_left.jpg)",
             backgroundRepeat: "repeat-y, repeat-y",
             backgroundPosition: "right, left",
-            backgroundSize: "20% auto, 20% auto",
+            backgroundSize: "15% auto, 15% auto",
             backgroundColor: "#010206",
           }}
         >

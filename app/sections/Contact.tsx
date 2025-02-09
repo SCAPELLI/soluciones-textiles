@@ -16,7 +16,11 @@ export function Contact() {
       }}
       id={Sections.CONTACT}
     >
-      <Grid container spacing={3} sx={{ marginTop: "20px", width: "60%" }}>
+      <Grid
+        container
+        spacing={3}
+        sx={{ marginTop: "20px", width: "80%", marginBottom: "30px" }}
+      >
         <Grid size={{ xs: 12, md: 3 }}>
           <Typography
             variant="h5"
@@ -45,7 +49,7 @@ export function Contact() {
             variant="h5"
             sx={{ color: "#cc55cc", fontWeight: "bold" }}
           >
-            Horario de atención
+            Horario
           </Typography>
           <Typography variant="body1">
             Lunes a Viernes <br /> 10 a 13 hs - 14 a 19 hs <br /> Sábados 10 a
@@ -57,7 +61,7 @@ export function Contact() {
             variant="h5"
             sx={{ color: "#cc55cc", fontWeight: "bold" }}
           >
-            Formas de pago
+            Pagos
           </Typography>
           <Typography variant="body1">
             Efectivo - Tarjetas <br /> Mercado Pago <br /> Transferencia
