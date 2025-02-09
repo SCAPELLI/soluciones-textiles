@@ -8,7 +8,7 @@ export function Footer() {
       sx={{
         color: "white",
         padding: "1px",
-        paddingRight: "120px",
+        paddingRight: "100px",
         alignItems: "center",
         justifyContent: "flex-start",
         backgroundColor: "#333",
