@@ -15,7 +15,7 @@ export function Footer() {
         width: "100%",
         display: "flex",
         flexDirection: "row",
-        height: "100px",
+        height: "120px",
       }}
       id={Sections.CONTACT}
     >
@@ -29,8 +29,7 @@ export function Footer() {
         }}
       />
       <Typography variant="caption" sx={{ color: "white" }}>
-        Copyright © 2025 | Soluciones Textiles La Modista | Todos los Derechos
-        Reservados.
+        Copyright © 2025 | Todos los Derechos Reservados.
       </Typography>
       <div style={{ display: "flex", flexGrow: 1 }} />
 
