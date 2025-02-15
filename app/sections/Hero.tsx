@@ -1,4 +1,5 @@
 "use client";
+import { useTheme, useMediaQuery } from "@mui/material";
 import StyledBox from "./StyledBox";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
@@ -9,8 +10,11 @@ import "swiper/css/autoplay";
 import { Sections } from "../Constants/Sections";
 
 export function Hero() {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
-    <StyledBox id={Sections.HOME}>
+    <StyledBox id={Sections.HOME} sx={{ width: isMobile ? "100%" : "70%" }}>
       <Swiper
         modules={[Pagination, Autoplay]}
         pagination
@@ -19,7 +23,7 @@ export function Hero() {
           delay: 4000,
           disableOnInteraction: false,
         }}
-        spaceBetween={50}
+        spaceBetween={0}
         slidesPerView={1}
         style={{
           width: "100%",

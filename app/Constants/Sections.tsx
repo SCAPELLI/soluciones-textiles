@@ -1,6 +1,6 @@
 export const Sections = {
   HOME: "Inicio",
-  CONTACT: "Contacto",
+  CONTACT: "Ubicación",
   SERVICES: "Servicios",
   ABOUT_ME: "Quiénes Somos",
 };

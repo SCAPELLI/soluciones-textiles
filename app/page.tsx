@@ -55,6 +55,9 @@ export default function Home() {
             backgroundColor: "#010206",
           }}
         >
+          <div ref={heroRef}>
+            <Hero />
+          </div>
           <Container
             sx={{
               width: "73%",
@@ -63,9 +66,6 @@ export default function Home() {
               alignItems: "center",
             }}
           >
-            <div ref={heroRef}>
-              <Hero />
-            </div>
             <Slogan />
             <AboutMe />
             <Services />

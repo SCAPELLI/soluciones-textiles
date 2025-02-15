@@ -32,7 +32,7 @@ export function Contact() {
           >
             Dirección
           </Typography>
-          <Typography variant="body2">
+          <Typography variant="body1">
             Membrillar 51, Local 74 <br /> CABA, Argentina
           </Typography>
         </Grid>
@@ -43,7 +43,7 @@ export function Contact() {
           >
             Contacto
           </Typography>
-          <Typography variant="body2">
+          <Typography variant="body1">
             <br />
             011 2251-5703
           </Typography>
@@ -55,7 +55,7 @@ export function Contact() {
           >
             Horario
           </Typography>
-          <Typography variant="body2">
+          <Typography variant="body1">
             Lunes a Viernes <br /> 10 a 13 hs - 14 a 19 hs <br /> Sábados 10 a
             13 hs
           </Typography>
@@ -67,7 +67,7 @@ export function Contact() {
           >
             Pagos
           </Typography>
-          <Typography variant="body2">
+          <Typography variant="body1">
             Efectivo - Tarjetas <br /> Mercado Pago - MODO <br /> Transferencia
           </Typography>
         </Grid>
