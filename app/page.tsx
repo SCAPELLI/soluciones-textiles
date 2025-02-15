@@ -11,6 +11,7 @@ import { useEffect, useRef } from "react";
 import { useStore } from "./store/store";
 import { FloatingIcon } from "./components/FloatingIcon";
 import { Container } from "@mui/material";
+import { Slogan } from "./sections/Slogan";
 
 export default function Home() {
   const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "";
@@ -65,6 +66,7 @@ export default function Home() {
             <div ref={heroRef}>
               <Hero />
             </div>
+            <Slogan />
             <Contact />
             <AboutMe />
             <Services />

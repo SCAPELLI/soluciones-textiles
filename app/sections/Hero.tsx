@@ -16,7 +16,7 @@ export function Hero() {
         pagination
         loop
         autoplay={{
-          delay: 5000,
+          delay: 4000,
           disableOnInteraction: false,
         }}
         spaceBetween={50}
@@ -28,14 +28,14 @@ export function Hero() {
       >
         <SwiperSlide>
           <img
-            src="/logo_con_datos_sin_lado.png"
+            src="/photos/hero1_formatted.png"
             alt="Soluciones Textiles La Modista"
             style={{ width: "100%", height: "auto" }}
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
-            src="/photos/hero1_formatted.png"
+            src="/photos/hero4_formatted.png"
             alt="Soluciones Textiles La Modista"
             style={{ width: "100%", height: "auto" }}
           />
@@ -50,6 +50,13 @@ export function Hero() {
         <SwiperSlide>
           <img
             src="/photos/hero3_formatted.png"
+            alt="Soluciones Textiles La Modista"
+            style={{ width: "100%", height: "auto" }}
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            src="/logo_con_datos_sin_lado.png"
             alt="Soluciones Textiles La Modista"
             style={{ width: "100%", height: "auto" }}
           />
