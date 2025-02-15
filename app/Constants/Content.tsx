@@ -17,6 +17,8 @@ export const Content = {
       "Venta de telas y accesorios",
       "Sastrería para eventos especiales",
       "Reparación de mochilas y bolsos",
+      "Camperas de cuero y tapados",
+      "Modernización de prendas",
     ],
     tailor: {
       title: "Sastrería y Reparaciones",

@@ -3,6 +3,7 @@ import { Typography } from "@mui/material";
 import StyledBox from "./StyledBox";
 import Grid from "@mui/material/Grid2";
 import { CustomMap } from "./CustomMap";
+import { Location } from "../components/Location";
 import { Sections } from "../Constants/Sections";
 
 export function Contact() {
@@ -19,7 +20,7 @@ export function Contact() {
       <Grid
         container
         spacing={3}
-        sx={{ marginTop: "20px", width: "80%", marginBottom: "30px" }}
+        sx={{ marginTop: "20px", width: "100%", marginBottom: "30px" }}
       >
         <Grid size={{ xs: 12, md: 3 }}>
           <Typography
@@ -29,7 +30,7 @@ export function Contact() {
             Dirección
           </Typography>
           <Typography variant="body2">
-            Membrillar 51, Local 74 <br /> Flores <br /> CABA, Argentina
+            Membrillar 51, Local 74 <br /> CABA, Argentina
           </Typography>
         </Grid>
         <Grid size={{ xs: 12, md: 3 }}>
@@ -70,6 +71,7 @@ export function Contact() {
       </Grid>
 
       <CustomMap />
+      <Location />
     </StyledBox>
   );
 }
