@@ -22,9 +22,9 @@ import { Content } from "../Constants/Content";
 
 const navItems = [
   Sections.HOME,
-  Sections.CONTACT,
   Sections.ABOUT_ME,
   Sections.SERVICES,
+  Sections.CONTACT,
 ];
 const drawerWidth = 240;
 
@@ -188,8 +188,8 @@ export const Navbar = () => {
                 src="icons/whatsapp.png"
                 alt="WhatsApp"
                 style={{
-                  width: "24px",
-                  height: "24px",
+                  width: "36px",
+                  height: "36px",
                 }}
               />
             </Link>
@@ -213,8 +213,8 @@ export const Navbar = () => {
                 src="icons/facebook.png"
                 alt="Facebook"
                 style={{
-                  width: "24px",
-                  height: "24px",
+                  width: "36px",
+                  height: "36px",
                 }}
               />
             </Link>
