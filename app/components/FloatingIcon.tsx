@@ -1,4 +1,4 @@
-import { Link } from "@mui/material";
+import { Link, Typography } from "@mui/material";
 import { Content } from "../Constants/Content";
 
 export const FloatingIcon = () => {
@@ -8,6 +8,7 @@ export const FloatingIcon = () => {
       rel="noopener noreferrer"
       href={`https://wa.me/+5491122515703/?text=${Content.whatsapp.message}`}
       sx={{
+        textDecoration: "none",
         transition: "transform 0.1s ease-in-out",
         position: "fixed",
         bottom: "1.7rem",
@@ -18,16 +19,35 @@ export const FloatingIcon = () => {
           cursor: "pointer",
         },
         zIndex: 1000,
+        borderRadius: "50%",
+        border: "2px solid #fae25c",
+        backgroundColor: "black",
+        height: "80px",
+        width: "80px",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
       }}
     >
       <img
         src="/icons/whatsapp_floating_button.png"
         alt="WhatsApp"
         style={{
-          width: "64px",
-          height: "64px",
+          width: "25px",
+          height: "25px",
         }}
       />
+      <Typography
+        sx={{
+          fontSize: 10,
+          color: "white",
+          marginTop: "2px",
+        }}
+      >
+        Chateá con <br />
+        La Modista
+      </Typography>
     </Link>
   );
 };
