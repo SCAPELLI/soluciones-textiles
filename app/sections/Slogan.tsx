@@ -1,6 +1,5 @@
 import StyledBox from "./StyledBox";
-import { Sections } from "../Constants/Sections";
-import { Box, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 
 export function Slogan() {
   return (
