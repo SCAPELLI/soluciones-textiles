@@ -22,9 +22,9 @@ import { Content } from "../Constants/Content";
 
 const navItems = [
   Sections.HOME,
-  Sections.SERVICES,
-  Sections.ABOUT_ME,
   Sections.CONTACT,
+  Sections.ABOUT_ME,
+  Sections.SERVICES,
 ];
 const drawerWidth = 240;
 

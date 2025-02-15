@@ -1,27 +1,30 @@
-import { Typography } from "@mui/material";
+import { Typography, useMediaQuery, useTheme } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 
 export const Location = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
   return (
     <Grid
       container
-      spacing={3}
       sx={{
         marginTop: "20px",
         width: "80%",
-        justifyContent: "center",
+        justifyContent: "space-between",
         display: "flex",
         marginBottom: "30px",
+        border: "2px solid #fae25c",
+        borderRadius: "10px",
       }}
     >
       <Grid size={{ xs: 12, md: 6 }}>
         <img
           src="mall.png"
           alt="map"
-          width="90%"
+          width="100%"
           style={{
-            border: "1px solid #cc55cc",
-            borderRadius: "10px",
+            borderRadius: isMobile ? "10px 10px 0 0" : "10px 0 0 10px",
             justifySelf: "center",
           }}
         />
@@ -30,7 +33,7 @@ export const Location = () => {
         size={{ xs: 12, md: 6 }}
         sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
       >
-        <Typography variant="h6">
+        <Typography variant={isMobile ? "h6" : "h5"}>
           Visítanos en la{" "}
           <span style={{ color: "#cc55cc", fontWeight: "bold" }}>
             Galería San José de Flores.

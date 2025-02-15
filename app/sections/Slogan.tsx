@@ -14,7 +14,7 @@ export function Slogan() {
           marginTop: "30px",
           maxWidth: "85%",
         }}
-        variant="body1"
+        variant="h5"
       >
         Todo tiene arreglo con voluntad y conocimiento
       </Typography>

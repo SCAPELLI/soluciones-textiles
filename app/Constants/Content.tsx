@@ -40,4 +40,7 @@ export const Content = {
     message1: `es una empresa con más de 40 años de experiencia en el rubro textil, especializada en la confección de ropa a medida, arreglos y entallados.`,
     message2: `Respetamos los tiempos de entrega, cumpliendo cada compromiso y superando las expectativas de nuestros clientes con resultados impecables`,
   },
+  contact: {
+    title: "Ubicación",
+  },
 };

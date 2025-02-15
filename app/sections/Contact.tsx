@@ -5,6 +5,7 @@ import Grid from "@mui/material/Grid2";
 import { CustomMap } from "./CustomMap";
 import { Location } from "../components/Location";
 import { Sections } from "../Constants/Sections";
+import { Content } from "../Constants/Content";
 
 export function Contact() {
   return (
@@ -17,6 +18,7 @@ export function Contact() {
       }}
       id={Sections.CONTACT}
     >
+      <Typography variant="h3">{Content.contact.title}</Typography>
       <Location />
       <Grid
         container

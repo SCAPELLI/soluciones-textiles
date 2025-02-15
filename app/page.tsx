@@ -67,9 +67,9 @@ export default function Home() {
               <Hero />
             </div>
             <Slogan />
-            <Contact />
             <AboutMe />
             <Services />
+            <Contact />
           </Container>
           <Footer />
           <FloatingIcon />
