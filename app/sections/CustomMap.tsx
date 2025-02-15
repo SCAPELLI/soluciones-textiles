@@ -111,7 +111,7 @@ export function CustomMap() {
 
 const styles = {
   map: {
-    height: "400px",
+    height: "350px",
     width: "60vw",
     borderRadius: "10px",
     border: "3px solid #fae25c",

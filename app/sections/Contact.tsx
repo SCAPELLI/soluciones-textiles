@@ -28,8 +28,8 @@ export function Contact() {
           >
             Dirección
           </Typography>
-          <Typography variant="body1">
-            Membrillar 51, Local 41 <br /> Flores <br /> CABA, Argentina
+          <Typography variant="body2">
+            Membrillar 51, Local 74 <br /> Flores <br /> CABA, Argentina
           </Typography>
         </Grid>
         <Grid size={{ xs: 12, md: 3 }}>
@@ -39,7 +39,7 @@ export function Contact() {
           >
             Contacto
           </Typography>
-          <Typography variant="body1">
+          <Typography variant="body2">
             <br />
             011 2251-5703
           </Typography>
@@ -51,7 +51,7 @@ export function Contact() {
           >
             Horario
           </Typography>
-          <Typography variant="body1">
+          <Typography variant="body2">
             Lunes a Viernes <br /> 10 a 13 hs - 14 a 19 hs <br /> Sábados 10 a
             13 hs
           </Typography>
@@ -63,8 +63,8 @@ export function Contact() {
           >
             Pagos
           </Typography>
-          <Typography variant="body1">
-            Efectivo - Tarjetas <br /> Mercado Pago <br /> Transferencia
+          <Typography variant="body2">
+            Efectivo - Tarjetas <br /> Mercado Pago - MODO <br /> Transferencia
           </Typography>
         </Grid>
       </Grid>

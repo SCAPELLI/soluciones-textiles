@@ -8,13 +8,13 @@ export function Slogan() {
         sx={{
           border: "2px solid white",
           borderRadius: "10px",
-          padding: "20px",
+          padding: "10px",
           textAlign: "center",
           color: "white",
           marginTop: "30px",
           maxWidth: "85%",
         }}
-        variant="h6"
+        variant="body1"
       >
         Todo tiene arreglo con voluntad y conocimiento
       </Typography>
