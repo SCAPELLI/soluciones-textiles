@@ -39,14 +39,14 @@ export function Hero() {
         </SwiperSlide>
         <SwiperSlide>
           <img
-            src="/photos/hero4_formatted.png"
+            src="/photos/hero2_formatted.png"
             alt="Soluciones Textiles La Modista"
             style={{ width: "100%", height: "auto" }}
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
-            src="/photos/hero2_formatted.png"
+            src="/photos/hero4_formatted.png"
             alt="Soluciones Textiles La Modista"
             style={{ width: "100%", height: "auto" }}
           />
