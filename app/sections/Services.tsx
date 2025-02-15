@@ -80,7 +80,13 @@ export function Services() {
       <Grid container spacing={3} sx={{ width: "100%" }}>
         <Grid size={{ xs: 12, md: 4 }}>
           <StyledImage
-            sources={["/photos/tailor1.png", "/photos/tailor2.png"]}
+            sources={[
+              "/photos/tailor1.png",
+              "/photos/tailor2.png",
+              "/photos/tailor5.jpg",
+              "/photos/tailor3.jpg",
+              "/photos/tailor4.jpg",
+            ]}
             title={Content.services.tailor.title}
             body={Content.services.tailor.message}
           />
@@ -90,9 +96,11 @@ export function Services() {
           <StyledImage
             sources={[
               "/merceria_formatted.jpg",
-              "/photos/merceria1.png",
               "/photos/merceria2.png",
+              "/photos/merceria4.jpg",
               "/photos/merceria3.png",
+              "/photos/merceria1.png",
+              "/photos/merceria5.jpg",
             ]}
             title={Content.services.supplies.title}
             body={Content.services.supplies.message}
@@ -101,10 +109,7 @@ export function Services() {
 
         <Grid size={{ xs: 12, md: 4 }}>
           <StyledImage
-            sources={[
-              "/photos/confecciones1.png",
-              "/confecciones_formatted.jpg",
-            ]}
+            sources={["/photos/confecciones1.png", "/photos/confecciones2.jpg"]}
             title={Content.services.costumes.title}
             body={Content.services.costumes.message}
           />
