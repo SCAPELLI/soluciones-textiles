@@ -46,7 +46,9 @@ export const FloatingIcon = () => {
         }}
       >
         Chateá con <br />
-        La Modista
+        <span style={{ color: "#cc55cc", fontWeight: "bold" }}>
+          La Modista
+        </span>{" "}
       </Typography>
     </Link>
   );

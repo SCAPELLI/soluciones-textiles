@@ -17,6 +17,7 @@ export function Contact() {
       }}
       id={Sections.CONTACT}
     >
+      <Location />
       <Grid
         container
         spacing={3}
@@ -71,7 +72,6 @@ export function Contact() {
       </Grid>
 
       <CustomMap />
-      <Location />
     </StyledBox>
   );
 }
