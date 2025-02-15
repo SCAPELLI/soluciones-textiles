@@ -5,8 +5,9 @@ const StyledBox = styled(Box)(() => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  width: "70%",
   justifySelf: "center",
+  alignSelf: "center",
+  width: "100%",
 }));
 
 export default StyledBox;

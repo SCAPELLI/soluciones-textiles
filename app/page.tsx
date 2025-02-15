@@ -10,6 +10,7 @@ import { Contact } from "./sections/Contact";
 import { useEffect, useRef } from "react";
 import { useStore } from "./store/store";
 import { FloatingIcon } from "./components/FloatingIcon";
+import { Container } from "@mui/material";
 
 export default function Home() {
   const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "";
@@ -53,12 +54,21 @@ export default function Home() {
             backgroundColor: "#010206",
           }}
         >
-          <div ref={heroRef}>
-            <Hero />
-          </div>
-          <Contact />
-          <AboutMe />
-          <Services />
+          <Container
+            sx={{
+              width: "73%",
+              display: "flow",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <div ref={heroRef}>
+              <Hero />
+            </div>
+            <Contact />
+            <AboutMe />
+            <Services />
+          </Container>
           <Footer />
           <FloatingIcon />
         </Box>
