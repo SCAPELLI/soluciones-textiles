@@ -65,6 +65,7 @@ export default function Home() {
               display: "flow",
               flexDirection: "column",
               alignItems: "center",
+              backgroundColor: "#010206",
             }}
           >
             <Slogan />
