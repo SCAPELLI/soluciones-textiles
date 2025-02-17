@@ -11,7 +11,7 @@ export function Slogan() {
           padding: "10px",
           textAlign: "center",
           color: "white",
-          marginTop: "30px",
+          marginTop: "40px",
           maxWidth: "85%",
         }}
         variant="h5"

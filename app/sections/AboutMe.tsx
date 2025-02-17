@@ -12,6 +12,8 @@ export function AboutMe() {
         flexDirection: "column",
         padding: "20px",
         textAlign: "center",
+        marginTop: "60px",
+        marginBottom: "60px",
       }}
       id={Sections.ABOUT_ME}
     >

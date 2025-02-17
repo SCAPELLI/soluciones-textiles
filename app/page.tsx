@@ -58,6 +58,7 @@ export default function Home() {
           <div ref={heroRef}>
             <Hero />
           </div>
+
           <Container
             sx={{
               width: "73%",

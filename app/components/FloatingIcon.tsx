@@ -22,8 +22,8 @@ export const FloatingIcon = () => {
         borderRadius: "50%",
         border: "2px solid #fae25c",
         backgroundColor: "black",
-        height: "80px",
-        width: "80px",
+        height: "85px",
+        width: "85px",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -34,13 +34,13 @@ export const FloatingIcon = () => {
         src="/icons/whatsapp_floating_button.png"
         alt="WhatsApp"
         style={{
-          width: "25px",
-          height: "25px",
+          width: "20px",
+          height: "20px",
         }}
       />
       <Typography
         sx={{
-          fontSize: 10,
+          fontSize: 12,
           color: "white",
           marginTop: "2px",
         }}

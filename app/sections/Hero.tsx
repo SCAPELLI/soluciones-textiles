@@ -14,7 +14,13 @@ export function Hero() {
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
-    <StyledBox id={Sections.HOME} sx={{ width: isMobile ? "100%" : "70%" }}>
+    <StyledBox
+      id={Sections.HOME}
+      sx={{
+        width: isMobile ? "100%" : "70%",
+        margin: "auto",
+      }}
+    >
       <Swiper
         modules={[Pagination, Autoplay]}
         pagination
@@ -23,7 +29,7 @@ export function Hero() {
           delay: 4000,
           disableOnInteraction: false,
         }}
-        spaceBetween={0}
+        spaceBetween={8}
         slidesPerView={1}
         style={{
           width: "100%",
