@@ -72,7 +72,7 @@ export function Services() {
                         <ListItemText
                           primary={_item}
                           primaryTypographyProps={{
-                            variant: _item === item ? "body2" : "h5",
+                            variant: _item === item ? "body1" : "h5",
                           }}
                         />
                       </ListItem>
