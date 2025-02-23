@@ -2,10 +2,9 @@
 import { useTheme, useMediaQuery } from "@mui/material";
 import StyledBox from "./StyledBox";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 
 import "swiper/css";
-import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import { Sections } from "../Constants/Sections";
 
@@ -22,8 +21,7 @@ export function Hero() {
       }}
     >
       <Swiper
-        modules={[Pagination, Autoplay]}
-        pagination
+        modules={[Autoplay]}
         loop
         autoplay={{
           delay: 4000,

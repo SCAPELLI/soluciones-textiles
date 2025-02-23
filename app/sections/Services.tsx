@@ -94,6 +94,7 @@ export function Services() {
               "/photos/tailor5.jpg",
               "/photos/tailor3.jpg",
               "/photos/tailor4.jpg",
+              "/photos/tailor6.png",
             ]}
             title={Content.services.tailor.title}
             body={Content.services.tailor.message}
