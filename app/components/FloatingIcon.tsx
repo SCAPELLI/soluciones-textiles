@@ -11,7 +11,7 @@ export const FloatingIcon = () => {
         textDecoration: "none",
         transition: "transform 0.1s ease-in-out",
         position: "fixed",
-        bottom: "1.7rem",
+        bottom: "1.3rem",
         right: "1rem",
 
         "&:hover": {

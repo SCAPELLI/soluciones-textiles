@@ -72,7 +72,15 @@ export function CustomMap() {
               style={{ width: "100%", height: "auto" }}
             />
             <Typography variant="caption" sx={{ color: "black" }}>
-              Membrillar 51, Local 74 <br /> CABA, Argentina
+              Membrillar 51, Local 74 <br /> CABA, Argentina <br />{" "}
+              <a
+                href="https://maps.app.goo.gl/eiENBkYCepRxyU5y8"
+                style={{ textDecoration: "underline", color: "blue" }}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ver en Google Maps
+              </a>
             </Typography>
           </InfoWindow>
         </div>

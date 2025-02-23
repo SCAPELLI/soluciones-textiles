@@ -62,14 +62,22 @@ export function Services() {
                 key={colIndex}
               >
                 <List>
-                  {column.map((item, index) => (
-                    <ListItem key={index}>
-                      <ListItemIcon>
-                        <CircleIcon />
-                      </ListItemIcon>
-                      <ListItemText primary={item} />
-                    </ListItem>
-                  ))}
+                  {column.map((item: string, index) => {
+                    const _item = item.split("-T").pop();
+                    return (
+                      <ListItem key={index}>
+                        <ListItemIcon>
+                          <CircleIcon />
+                        </ListItemIcon>
+                        <ListItemText
+                          primary={_item}
+                          primaryTypographyProps={{
+                            variant: _item === item ? "body2" : "h5",
+                          }}
+                        />
+                      </ListItem>
+                    );
+                  })}
                 </List>
               </Grid>
             )
