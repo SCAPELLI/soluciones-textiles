@@ -1,3 +1,4 @@
+// app/components/StyledImage.tsx
 "use client";
 
 import { Box, Typography } from "@mui/material";
@@ -65,6 +66,9 @@ const StyledImage: React.FC<StyledImageProps> = ({ sources, title, body }) => {
               <img
                 src={src}
                 alt={src}
+                loading="lazy"
+                decoding="async"
+                
                 style={{
                   width: "100%",
                   height: "auto",

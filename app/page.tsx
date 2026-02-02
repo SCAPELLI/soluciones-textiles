@@ -1,3 +1,4 @@
+// app/page.tsx
 "use client";
 import Box from "@mui/material/Box";
 import { Services } from "./sections/Services";
