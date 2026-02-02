@@ -1,3 +1,4 @@
+// app/sections/CustomMap.tsx
 import { Typography, useMediaQuery, useTheme } from "@mui/material";
 import {
   AdvancedMarker,
@@ -9,6 +10,7 @@ import {
   useAdvancedMarkerRef,
 } from "@vis.gl/react-google-maps";
 import { useState } from "react";
+import Image from "next/image";
 
 export function CustomMap() {
   const [markerRef, marker] = useAdvancedMarkerRef();
@@ -66,10 +68,13 @@ export function CustomMap() {
               marginRight: "6px",
             }}
           >
-            <img
+            <Image
               src="/logo_sin_datos2.png"
               alt="Soluciones Textiles La Modista"
-              style={{ width: "100%", height: "auto" }}
+              width={600}   // ratio base (ajustable)
+              height={200}  // ratio base (ajustable)
+              sizes="200px" // InfoWindow maxWidth 200, así que esto es correcto
+              style={{ width: "100%", height: "auto", display: "block" }}
             />
             <Typography variant="caption" sx={{ color: "black" }}>
               Membrillar 51, Local 74 <br /> CABA, Argentina <br />{" "}
