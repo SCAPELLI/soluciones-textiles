@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import {
   AppBar,
   Toolbar,
@@ -30,12 +31,9 @@ const drawerWidth = 240;
 
 export const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
-
-  const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState);
-  };
-
   const heroIsVisible = useStore((state) => state.heroIsVisible);
+
+  const handleDrawerToggle = () => setMobileOpen((prev) => !prev);
 
   const handleNavClick = (
     id: string,
@@ -44,9 +42,7 @@ export const Navbar = () => {
     event?.preventDefault();
     const section = document.getElementById(id);
     if (section) {
-      section.scrollIntoView({
-        block: "start",
-      });
+      section.scrollIntoView({ block: "start" });
       window.scrollBy(0, -60);
     }
   };
@@ -68,9 +64,13 @@ export const Navbar = () => {
         ))}
       </List>
       <Divider />
-      <img
+
+      {/* Drawer logo */}
+      <Image
         src="/logo_sin_datos_sin_lado_letra_negra.png"
         alt="Soluciones Textiles La Modista"
+        width={600}   // base para ratio (ajustable)
+        height={200}  // base para ratio (ajustable)
         style={{
           position: "absolute",
           bottom: 8,
@@ -87,15 +87,7 @@ export const Navbar = () => {
       <CssBaseline />
       <AppBar position="fixed" sx={{ zIndex: 1201, backgroundColor: "#333" }}>
         <Toolbar>
-          {/* Icono de menú en pantallas pequeñas */}
-          <Box
-            sx={{
-              display: { sm: "none" },
-              mr: 2,
-              width: "36%",
-              alignItems: "left",
-            }}
-          >
+          <Box sx={{ display: { sm: "none" }, mr: 2, width: "36%" }}>
             <IconButton
               color="inherit"
               aria-label="open drawer"
@@ -105,17 +97,12 @@ export const Navbar = () => {
               <MenuIcon />
             </IconButton>
           </Box>
-          {/* Links en pantallas grandes */}
+
           <Box
             sx={{
-              display: {
-                xs: "none",
-                sm: "flex",
-                width: "40%",
-                justifyContent: "flex-start",
-                flexDirection: "row",
-                cursor: "pointer",
-              },
+              display: { xs: "none", sm: "flex" },
+              width: "40%",
+              justifyContent: "flex-start",
             }}
           >
             {navItems.map((item) => (
@@ -125,17 +112,14 @@ export const Navbar = () => {
                 color="inherit"
                 underline="none"
                 marginLeft={1}
-                sx={{
-                  fontSize: "13px",
-                  cursor: "pointer",
-                  "&:hover": { opacity: 0.7 },
-                }}
+                sx={{ fontSize: "13px", "&:hover": { opacity: 0.7 } }}
               >
                 {item}
               </Link>
             ))}
           </Box>
 
+          {/* Logo central */}
           <Box
             sx={{
               display: "flex",
@@ -144,19 +128,33 @@ export const Navbar = () => {
               justifyContent: "center",
             }}
           >
-            <img
-              src="/logo_sin_datos_sin_lado.png"
-              alt="Soluciones Textiles La Modista"
-              style={{
-                width: "auto",
-                maxHeight: "40px",
+            {/* Le damos una "caja" estable para evitar rarezas de layout */}
+            <Box
+              sx={{
                 minWidth: "150px",
-                transition:
-                  "opacity 0.1s ease-in-out, transform 0.1s ease-in-out",
-                opacity: heroIsVisible ? 0 : 1,
-                transform: heroIsVisible ? "translateY(14px)" : "translateY(0)",
+                maxHeight: "40px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
               }}
-            />
+            >
+              <Image
+                src="/logo_sin_datos_sin_lado.png"
+                alt="Soluciones Textiles La Modista"
+                width={800}   // base ratio (ajustable)
+                height={220}  // base ratio (ajustable)
+                style={{
+                  width: "auto",
+                  height: "40px", // clave: fijamos alto como tu diseño original
+                  transition:
+                    "opacity 0.1s ease-in-out, transform 0.1s ease-in-out",
+                  opacity: heroIsVisible ? 0 : 1,
+                  transform: heroIsVisible
+                    ? "translateY(14px)"
+                    : "translateY(0)",
+                }}
+              />
+            </Box>
           </Box>
 
           <Box
@@ -168,68 +166,51 @@ export const Navbar = () => {
               display: "flex",
             }}
           >
+            {/* íconos chicos -> no tocamos */}
             <Link
-              key={"wpp"}
               target="_blank"
               rel="noopener noreferrer"
               href={`https://wa.me/+5491122515703/?text=${Content.whatsapp.message}`}
-              color="inherit"
               underline="none"
               sx={{
                 marginLeft: "1rem",
                 transition: "transform 0.1s ease-in-out",
-                "&:hover": {
-                  transform: "scale(1.2)",
-                  cursor: "pointer",
-                },
+                "&:hover": { transform: "scale(1.2)", cursor: "pointer" },
               }}
             >
               <img
-                src="icons/whatsapp.png"
+                src="/icons/whatsapp_small.png"
                 alt="WhatsApp"
-                style={{
-                  width: "36px",
-                  height: "36px",
-                }}
+                style={{ width: "36px", height: "36px" }}
               />
             </Link>
+
             <Link
-              key={"facebook"}
               href="https://www.facebook.com/stlamodista"
-              color="inherit"
               underline="none"
               target="_blank"
               rel="noopener noreferrer"
               sx={{
                 marginLeft: "1rem",
                 transition: "transform 0.1s ease-in-out",
-                "&:hover": {
-                  transform: "scale(1.2)",
-                  cursor: "pointer",
-                },
+                "&:hover": { transform: "scale(1.2)", cursor: "pointer" },
               }}
             >
               <img
-                src="icons/facebook.png"
+                src="/icons/facebook_small.png"
                 alt="Facebook"
-                style={{
-                  width: "36px",
-                  height: "36px",
-                }}
+                style={{ width: "36px", height: "36px" }}
               />
             </Link>
           </Box>
         </Toolbar>
       </AppBar>
 
-      {/* Drawer en pantallas pequeñas */}
       <Drawer
         variant="temporary"
         open={mobileOpen}
         onClose={handleDrawerToggle}
-        ModalProps={{
-          keepMounted: true, // Mejora el rendimiento en móviles
-        }}
+        ModalProps={{ keepMounted: true }}
         sx={{
           display: { xs: "block", sm: "none" },
           "& .MuiDrawer-paper": { boxSizing: "border-box", width: drawerWidth },

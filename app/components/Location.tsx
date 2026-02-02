@@ -1,3 +1,7 @@
+// app/components/Location.tsx
+"use client";
+
+import Image from "next/image";
 import { Typography, useMediaQuery, useTheme } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 
@@ -16,29 +20,43 @@ export const Location = () => {
         marginBottom: "30px",
         border: "2px solid #fae25c",
         borderRadius: "10px",
+        overflow: "hidden", // 👈 asegura que la imagen respete el borde
       }}
     >
       <Grid size={{ xs: 12, md: 6 }}>
-        <img
-          src="mall.png"
-          alt="map"
-          width="100%"
+        <Image
+          src="/mall.png"
+          alt="Ubicación Galería San José de Flores"
+          width={1200}   // 👈 ajustá a la resolución real si la sabés
+          height={800}   // 👈 ratio importante para evitar CLS
+          sizes="(max-width: 900px) 100vw, 50vw"
           style={{
-            borderRadius: isMobile ? "10px 10px 0 0" : "10px 0 0 10px",
-            justifySelf: "center",
+            width: "100%",
+            height: "auto",
+            borderRadius: isMobile
+              ? "10px 10px 0 0"
+              : "10px 0 0 10px",
+            display: "block",
           }}
         />
       </Grid>
+
       <Grid
         size={{ xs: 12, md: 6 }}
-        sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: "20px",
+        }}
       >
         <Typography variant={isMobile ? "h6" : "h5"}>
           Visítanos en la{" "}
           <span style={{ color: "#cc55cc", fontWeight: "bold" }}>
             Galería San José de Flores.
-          </span>{" "}
-          <br /> Entrada por la calle Membrillar.
+          </span>
+          <br />
+          Entrada por la calle Membrillar.
         </Typography>
       </Grid>
     </Grid>

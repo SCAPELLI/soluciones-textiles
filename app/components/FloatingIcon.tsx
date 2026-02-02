@@ -31,7 +31,7 @@ export const FloatingIcon = () => {
       }}
     >
       <img
-        src="/icons/whatsapp_floating_button.png"
+        src="/icons/whatsapp_floating_button_small.png"
         alt="WhatsApp"
         style={{
           width: "20px",
