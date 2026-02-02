@@ -1,6 +1,6 @@
-// app/components/StyledImage.tsx
 "use client";
 
+import Image from "next/image";
 import { Box, Typography } from "@mui/material";
 import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
 import { useState } from "react";
@@ -11,115 +11,105 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
+interface ImageSource {
+  src: string;
+  width: number;
+  height: number;
+}
+
 interface StyledImageProps {
-  sources: string[];
+  sources: ImageSource[];
   title: string;
   body: string;
 }
 
 const StyledImage: React.FC<StyledImageProps> = ({ sources, title, body }) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
+
   return (
     <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-      onMouseEnter={() => setIsCollapsed(true)} // Llama a setIsCollapsed cuando el mouse entra
-      onMouseLeave={() => setIsCollapsed(false)} // Restaura el estado cuando el mouse sale
+      sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+      onMouseEnter={() => setIsCollapsed(true)}
+      onMouseLeave={() => setIsCollapsed(false)}
     >
-      <Box
-        sx={{
-          height: "80px",
-          display: "flex",
-          alignItems: "end",
-          justifyContent: "center",
-          marginBottom: "10px",
-        }}
-      >
+      <Box sx={{ height: 80, display: "flex", alignItems: "end", mb: 1 }}>
         <Typography variant="h5">{title}</Typography>
       </Box>
+
       <Box
         sx={{
-          position: "relative", // Contenedor relativo para posicionar elementos hijos
-          display: "inline-block", // Para que se ajuste al tamaño de la imagen
-          transition: "transform 0.3s ease", // Agrega una transición suave para el cambio de tamaño
-          "&:hover": {
-            transform: "scale(1.05)", // Escala un 5% al hacer hover
-            cursor: "pointer",
-          },
+          position: "relative",
           width: "100%",
+          transition: "transform 0.3s ease",
+          zIndex: 0, // <- base
+          "&:hover": { transform: "scale(1.05)", cursor: "pointer" },
         }}
       >
         <Swiper
           modules={[Pagination, Navigation]}
           pagination
-          loop
           navigation
-          slidesPerView={1}
-          style={{ width: "100%" }}
+          loop
+          style={{ width: "100%", position: "relative", zIndex: 0 }} // <- asegurar base
         >
-          {sources.map((src, index) => (
-            <SwiperSlide key={index}>
-              <img
-                src={src}
-                alt={src}
-                loading="lazy"
-                decoding="async"
-                
+          {sources.map((img) => (
+            <SwiperSlide key={img.src} style={{ position: "relative", zIndex: 0 }}>
+              <Image
+                src={img.src}
+                alt={title}
+                width={img.width}
+                height={img.height}
+                sizes="(max-width: 900px) 100vw, 33vw"
                 style={{
                   width: "100%",
                   height: "auto",
                   borderRadius: "10px",
                   border: "2px solid #fae25c",
+                  display: "block",
                 }}
               />
             </SwiperSlide>
           ))}
         </Swiper>
+
         <Box
           sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            width: 50, // tamaño del círculo
-            height: isCollapsed ? 0 : 50, // Se colapsa a 0 cuando el flag es true
-            opacity: isCollapsed ? 0 : 1, // Hace que el círculo se desvanezca al colapsar
-
-            overflow: "hidden", // Evita que los contenidos se vean cuando está colapsado
-            transition: "height 0.3s ease, opacity 0.3s ease", // Aplica transiciones en la altura y opacidad
-
-            borderRadius: "50%", // hace el círculo
-            backgroundColor: "#fae25c", // color de fondo del círculo
-            color: "black", // color del ícono
+            width: 50,
+            height: isCollapsed ? 0 : 50,
+            opacity: isCollapsed ? 0 : 1,
+            transition: "height 0.3s, opacity 0.3s",
+            borderRadius: "50%",
+            backgroundColor: "#fae25c",
             position: "absolute",
-            bottom: 0, // centrar verticalmente
-            left: "50%", // centrar horizontalmente
-            transform: "translateX(-50%) translateY(50%)",
-            zIndex: 1, // Asegura que el círculo esté sobre la imagen
+            bottom: 0,
+            left: "50%",
+            transform: "translate(-50%, 50%)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            zIndex: 10,           // <- subir por encima del Swiper
+            pointerEvents: "none" // <- opcional, evita que bloquee swipe/click
           }}
         >
           <KeyboardDoubleArrowDownIcon />
         </Box>
       </Box>
+
+
       <Box
         sx={{
+          backgroundColor: "rgba(235,52,204,0.5)",
           borderRadius: "0 0 10px 10px",
-          backgroundColor: "rgba(235, 52, 204, 0.5)",
           border: isCollapsed ? "2px solid #fae25c" : 0,
-          height: isCollapsed ? "200px" : 0,
+          height: isCollapsed ? 200 : 0,
           overflow: "hidden",
-          transition: "max-height 0.5s ease-in-out, height 0.3s ease",
+          transition: "height 0.3s ease",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
         }}
       >
-        <Typography variant="body1" sx={{ color: "white" }}>
-          {body}
-        </Typography>
+        <Typography color="white">{body}</Typography>
       </Box>
     </Box>
   );

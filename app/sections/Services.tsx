@@ -90,27 +90,26 @@ export function Services() {
         <Grid size={{ xs: 12, md: 4 }}>
           <StyledImage
             sources={[
-              "/photos/tailor1.png",
-              "/photos/tailor2.png",
-              "/photos/tailor5.jpg",
-              "/photos/tailor3.jpg",
-              "/photos/tailor4.jpg",
-              "/photos/tailor6.png",
+              { src: "/photos/tailor1.png", width: 860, height: 911 },
+              { src: "/photos/tailor2.png", width: 860, height: 911 },
+              { src: "/photos/tailor3.jpg", width: 860, height: 911 },
+              { src: "/photos/tailor4.jpg", width: 860, height: 911 },
             ]}
             title={Content.services.tailor.title}
             body={Content.services.tailor.message}
           />
+
         </Grid>
 
         <Grid size={{ xs: 12, md: 4 }}>
           <StyledImage
             sources={[
-              "/merceria_formatted.jpg",
-              "/photos/merceria2.png",
-              "/photos/merceria4.jpg",
-              "/photos/merceria3.png",
-              "/photos/merceria1.png",
-              "/photos/merceria5.jpg",
+              { src: "/photos/merceria_formatted.jpg", width: 1448, height: 1535 },
+              { src: "/photos/merceria2.png", width: 860, height: 911 },
+              { src: "/photos/merceria4.jpg", width: 860, height: 911 },
+              { src: "/photos/merceria3.png", width: 860, height: 911 },
+              { src: "/photos/merceria1.png", width: 860, height: 911 },
+              { src: "/photos/merceria5.jpg", width: 860, height: 911 },
             ]}
             title={Content.services.supplies.title}
             body={Content.services.supplies.message}
@@ -119,7 +118,10 @@ export function Services() {
 
         <Grid size={{ xs: 12, md: 4 }}>
           <StyledImage
-            sources={["/photos/confecciones1.png", "/photos/confecciones2.jpg"]}
+            sources={[
+              { src: "/photos/confecciones1.png", width: 860, height: 911 },
+              { src: "/photos/confecciones2.jpg", width: 860, height: 911 },
+            ]}
             title={Content.services.costumes.title}
             body={Content.services.costumes.message}
           />
