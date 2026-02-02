@@ -1,7 +1,7 @@
 // app/helpers/modal_control.ts
 export const RELOCATION_MODAL_KEY = "lamodista_relocation_modal_v2";
-const MAX_PER_DAY = 2;
-const END_DATE = new Date("2026-06-01T00:00:00"); // desde acá NO aparece más
+// const MAX_PER_DAY = 2;
+// const END_DATE = new Date("2026-06-01T00:00:00"); // desde acá NO aparece más
 
 function todayKey() {
   return new Date().toISOString().slice(0, 10); // YYYY-MM-DD
