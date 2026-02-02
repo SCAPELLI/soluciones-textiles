@@ -48,14 +48,31 @@ export default function Home() {
         <Box
           sx={{
             position: "relative",
+            backgroundColor: "#010206",
+
+            // Fallback para navegadores viejos
             backgroundImage:
               "url(/ai_side_image_seamless_right.jpg), url(/ai_side_image_seamless_left.jpg)",
             backgroundRepeat: "repeat-y, repeat-y",
             backgroundPosition: "right, left",
             backgroundSize: "15% auto, 15% auto",
-            backgroundColor: "#010206",
+
+            // Navegadores modernos: WebP
+            "@supports (background-image: image-set(url('/x.webp') type('image/webp')))": {
+              backgroundImage: `
+        image-set(
+          url(/ai_side_image_seamless_right.webp) type('image/webp'),
+          url(/ai_side_image_seamless_right.jpg) type('image/jpeg')
+        ),
+        image-set(
+          url(/ai_side_image_seamless_left.webp) type('image/webp'),
+          url(/ai_side_image_seamless_left.jpg) type('image/jpeg')
+        )
+      `,
+            },
           }}
         >
+
           <div ref={heroRef}>
             <Hero />
           </div>
