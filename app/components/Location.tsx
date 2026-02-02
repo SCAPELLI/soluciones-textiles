@@ -51,12 +51,12 @@ export const Location = () => {
         }}
       >
         <Typography variant={isMobile ? "h6" : "h5"}>
-          Visítanos en la{" "}
+          Visítanos en nuestro{" "} <br />
           <span style={{ color: "#cc55cc", fontWeight: "bold" }}>
-            Galería San José de Flores.
+            nuevo local a la calle,
           </span>
           <br />
-          Entrada por la calle Membrillar.
+          a pocas cuadras del Subte A.
         </Typography>
       </Grid>
     </Grid>

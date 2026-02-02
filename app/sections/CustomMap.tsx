@@ -35,7 +35,7 @@ export function CustomMap() {
     >
       <AdvancedMarker
         ref={markerRef}
-        position={{ lat: -34.62897840637906, lng: -58.46100151324344 }}
+        position={{ lat: -34.63074176864826, lng: -58.4646812032998 }}
         onClick={() => {
           console.log("AdvancedMarker clicked");
           if (infowindowOpen) {
@@ -77,9 +77,9 @@ export function CustomMap() {
               style={{ width: "100%", height: "auto", display: "block" }}
             />
             <Typography variant="caption" sx={{ color: "black" }}>
-              Membrillar 51, Local 74 <br /> CABA, Argentina <br />{" "}
+              Ramón Falcón 2592 <br /> CABA, Argentina <br />{" "}
               <a
-                href="https://maps.app.goo.gl/eiENBkYCepRxyU5y8"
+                href="https://maps.app.goo.gl/GDE5zHdNSsK6wiTy7"
                 style={{ textDecoration: "underline", color: "blue" }}
                 target="_blank"
                 rel="noreferrer"

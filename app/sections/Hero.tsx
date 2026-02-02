@@ -11,9 +11,9 @@ import "swiper/css/autoplay";
 import { Sections } from "../Constants/Sections";
 
 const SLIDES = [
-  "/photos/hero1_formatted.png",
-  "/photos/hero2_formatted.png",
-  "/photos/hero4_formatted.png",
+  "/photos/hero1_formatted_updated.png",
+  "/photos/hero2_formatted_updated.png",
+  "/photos/hero4_formatted_updated.png",
   "/photos/hero3_formatted.png",
   "/logo_con_datos_sin_lado.png",
 ];

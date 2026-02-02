@@ -33,7 +33,7 @@ export function Contact() {
             Dirección
           </Typography>
           <Typography variant="body1">
-            Membrillar 51, Local 74 <br /> CABA, Argentina
+            Ramón Falcón 2592 <br /> CABA, Argentina
           </Typography>
         </Grid>
         <Grid size={{ xs: 12, md: 3 }}>

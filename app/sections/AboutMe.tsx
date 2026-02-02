@@ -21,7 +21,7 @@ export function AboutMe() {
 
       <Grid container spacing={3} sx={{ marginTop: "20px", width: "80%" }}>
         <Grid size={{ xs: 12, md: 6 }}>
-          <Typography variant="body1" sx={{}}>
+          <Typography variant="h6" sx={{}}>
             <span style={{ fontWeight: "bold" }}>Soluciones Textiles</span>{" "}
             <span style={{ color: "#cc55cc", fontWeight: "bold" }}>
               La Modista
@@ -30,7 +30,7 @@ export function AboutMe() {
           </Typography>
         </Grid>
         <Grid size={{ xs: 12, md: 6 }}>
-          <Typography variant="body1" sx={{}}>
+          <Typography variant="h6" sx={{}}>
             {" "}
             {Content.aboutMe.message2}
           </Typography>
