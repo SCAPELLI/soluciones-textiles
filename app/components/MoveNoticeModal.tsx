@@ -57,8 +57,12 @@ export function RelocationModal({ open, onClose }: Props) {
         sx={{
           p: 2,
           backgroundColor: "#000",
+          display: "flex",
+          flexDirection: "column",
+          gap: 2, // espacio elegante entre aviso y foto
         }}
       >
+        {/* Aviso de mudanza */}
         <Box
           component="img"
           src="/nos_mudamos.png"
@@ -70,7 +74,22 @@ export function RelocationModal({ open, onClose }: Props) {
             borderRadius: 1.5,
           }}
         />
+
+        {/* Foto del nuevo local */}
+        <Box
+          component="img"
+          src="/frente_local_falcon.jpeg"
+          alt="Frente del nuevo local - La Modista"
+          sx={{
+            width: "100%",
+            height: "auto",
+            display: "block",
+            borderRadius: 1.5,
+            border: "1px solid rgba(255,255,255,0.08)",
+          }}
+        />
       </DialogContent>
+
 
       <DialogActions
         sx={{

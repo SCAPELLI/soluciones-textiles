@@ -25,8 +25,8 @@ export const Location = () => {
     >
       <Grid size={{ xs: 12, md: 6 }}>
         <Image
-          src="/mall.png"
-          alt="Ubicación Galería San José de Flores"
+          src="/frente_local_falcon.jpeg"
+          alt="Ubicación Local La Modista - Nuevo local a la calle"
           width={1200}   // 👈 ajustá a la resolución real si la sabés
           height={800}   // 👈 ratio importante para evitar CLS
           sizes="(max-width: 900px) 100vw, 50vw"
