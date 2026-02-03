@@ -23,19 +23,25 @@ export function RelocationModal({ open, onClose }: Props) {
     <Dialog
       open={open}
       onClose={onClose}
-      maxWidth="md"
       fullWidth
+      maxWidth={false} // 🔑 dejamos de depender de "md" para controlar nosotros
       PaperProps={{
         sx: {
           backgroundColor: "#000",
           borderRadius: 2,
           border: "1px solid rgba(255,255,255,0.08)",
           boxShadow: "0 12px 40px rgba(0,0,0,0.75)",
-          position: "relative", // 🔑 necesario para la cruz
+          position: "relative",
+
+          // ✅ tamaño estable por viewport (independiente del zoom en gran medida)
+          width: "min(1200px, 92vw)",
+          maxHeight: "86vh",
+
+          // ✅ mata overflow horizontal
+          overflow: "hidden",
         },
       }}
     >
-      {/* ❌ Cruz de cierre */}
       <IconButton
         aria-label="Cerrar"
         onClick={onClose}
@@ -45,9 +51,7 @@ export function RelocationModal({ open, onClose }: Props) {
           right: 8,
           zIndex: 2,
           color: "rgba(255,255,255,0.7)",
-          "&:hover": {
-            color: "white",
-          },
+          "&:hover": { color: "white" },
         }}
       >
         <CloseIcon />
@@ -57,40 +61,60 @@ export function RelocationModal({ open, onClose }: Props) {
         sx={{
           p: 2,
           backgroundColor: "#000",
-          display: "flex",
-          flexDirection: "column",
-          gap: 2, // espacio elegante entre aviso y foto
+
+          // ✅ no scroll horizontal
+          overflowX: "hidden",
+
+          // ✅ si hace falta, scroll vertical (mejor UX que horizontal)
+          overflowY: "auto",
+
+          // ✅ usar el alto disponible del Paper (deja lugar al botón)
+          maxHeight: "calc(86vh - 84px)", // ~alto de acciones (aprox)
         }}
       >
-        {/* Aviso de mudanza */}
         <Box
-          component="img"
-          src="/nos_mudamos.png"
-          alt="Aviso de mudanza - La Modista"
           sx={{
-            width: "100%",
-            height: "auto",
-            display: "block",
-            borderRadius: 1.5,
+            display: "flex",
+            gap: 2,
+            flexDirection: { xs: "column", md: "row" },
           }}
-        />
+        >
+          {/* AVISO */}
+          <Box
+            component="img"
+            src="/nos_mudamos.png"
+            alt="Aviso de mudanza - La Modista"
+            sx={{
+              flex: { md: "1 1 0" },
+              minWidth: 0, // 🔑 evita overflow en flex
+              width: "100%",
+              maxHeight: { xs: "42vh", md: "62vh" },
+              objectFit: "contain",
+              display: "block",
+              borderRadius: 1.5,
+            }}
+          />
 
-        {/* Foto del nuevo local */}
-        <Box
-          component="img"
-          src="/frente_local_falcon.jpeg"
-          alt="Frente del nuevo local - La Modista"
-          sx={{
-            width: "100%",
-            height: "auto",
-            display: "block",
-            borderRadius: 1.5,
-            border: "1px solid rgba(255,255,255,0.08)",
-          }}
-        />
+          {/* FOTO LOCAL */}
+          <Box
+            component="img"
+            src="/frente_local_falcon.jpeg"
+            alt="Frente del nuevo local - La Modista"
+            sx={{
+              flex: { md: "1 1 0" },
+              minWidth: 0, // 🔑 evita overflow en flex
+              width: "100%",
+              maxHeight: { xs: "42vh", md: "62vh" },
+              objectFit: "contain",
+              display: "block",
+              borderRadius: 1.5,
+              border: "1px solid rgba(255,255,255,0.08)",
+            }}
+          />
+        </Box>
       </DialogContent>
 
-
+      {/* Tu DialogActions igual */}
       <DialogActions
         sx={{
           p: 2,
@@ -121,5 +145,7 @@ export function RelocationModal({ open, onClose }: Props) {
         </Button>
       </DialogActions>
     </Dialog>
+
+
   );
 }
